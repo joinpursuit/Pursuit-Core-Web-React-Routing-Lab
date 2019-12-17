@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DogApp from './Dog Components/DogApp'
 import { Link, Switch, Route } from 'react-router-dom';
-import Home from './Home'
+import Home from './Utilities/Home'
 
 
 class App extends Component {

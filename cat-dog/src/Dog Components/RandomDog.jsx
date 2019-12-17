@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import Selector from './Selector';
 import DogFrom from './dogForm'
-import Pet from '../Display';
+import Pet from '../Utilities/Display';
 
 
 class RandomDog extends Component {
