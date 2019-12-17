@@ -18,8 +18,6 @@ class DogForm extends React.Component {
         this.getDogBreeds()
     }
 
-
-
     handleBreedChange = (event) => {
         const newBreed = event.target.value
         this.setState({
@@ -59,15 +57,9 @@ class DogForm extends React.Component {
                 breeds: allBreeds
             })
 
-            // this.breeds = allBreeds;
         } catch (error) {
             console.log("Oops All Errors!", error)
         }
-    }
-    handleNum = e => {
-        this.setState({
-            numOfDogs: e.target.value
-        })
     }
 
     handleNewDogButton = (event) => {
@@ -80,22 +72,8 @@ class DogForm extends React.Component {
 
         console.log('state', this.state);
 
-        const { breeds, selectedBreed, numOfDogs } = this.state
         return (<>
-            <select onChange={this.handleBreedChange} value={selectedBreed}>
-                <option value=""></option>
-                {
-                    // breeds.map(breed => {
-                    //     return <option value={breed} key={breed}>{breed}</option>
-                    // })
-
-                    this.populateSelect()
-                }
-            </select>
-            <input type="number" min='1' max='15' value={numOfDogs} onChange={this.handleNum} />
             <button onClick={this.handleNewDogButton}>New Dog</button>
-            <button onClick={this.resetSelect}>Reset</button>
-
         </>)
     }
 }

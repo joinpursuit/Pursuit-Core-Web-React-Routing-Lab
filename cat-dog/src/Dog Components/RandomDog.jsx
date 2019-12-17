@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 // import Selector from './Selector';
-import DogFrom from './dogForm'
 import Pet from '../Utilities/Display';
+import DogForm from './dogForm';
 
 
 class RandomDog extends Component {
@@ -20,14 +20,12 @@ class RandomDog extends Component {
         this.getDogPicture()
     }
 
-
-
     getDogPicture = async (selectedBreed, numOfDogs) => {
         // const { selectedBreed } = this.state
-        let dogAPIURL = "https://dog.ceo/api/breeds/image/random"
+        let dogURL = "https://dog.ceo/api/breeds/image/random"
         // axios request using try, catch and async, await
         try {
-            const { data } = await axios.get(dogAPIURL)
+            const { data } = await axios.get(dogURL)
             console.log(data)
             this.setState({
                 url: data.message,
@@ -44,7 +42,7 @@ class RandomDog extends Component {
         return (
             <div className="RandomDog">
                 <h1>Random Dog Pictures v1</h1>
-                <DogFrom
+                <DogForm
                     getDogPicture={this.getDogPicture}
                 />
                 <br />
