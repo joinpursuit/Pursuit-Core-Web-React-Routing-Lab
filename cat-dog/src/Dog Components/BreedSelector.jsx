@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 // import Selector from './Selector';
+import './BreedSelector.css';
+import DogForm from './dogForm'
 import Pet from '../Utilities/Display';
 
 
-class RandomDog extends Component {
+class BreedSelector extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,9 +21,11 @@ class RandomDog extends Component {
         this.getDogPicture()
     }
 
-    getDogPicture = async () => {
-        let dogURL = "https://dog.ceo/api/breeds/image/random"
-        // axios request using try, catch and async, await
+
+
+    getDogPicture = async (selectedBreed) => {
+        let dogURL = `https://dog.ceo/api/breed/${selectedBreed}/images/random`
+
         try {
             const { data } = await axios.get(dogURL)
             console.log(data)
@@ -34,22 +38,21 @@ class RandomDog extends Component {
         }
 
     }
-    handleNewDogButton = () => {
-        this.getDogPicture()
-    }
 
     render() {
         const { url } = this.state
         return (
-            <div className="RandomDog">
+            <div className="BreedSelector">
                 <h1>Random Dog Pictures v1</h1>
-                <button onClick={this.handleNewDogButton}>New Dog</button>
+                <DogForm
+                    getDogPicture={this.getDogPicture}
+                />
                 <br />
                 <Pet url={url} />
 
-            </div >
+            </div>
         )
     }
 }
 
-export default RandomDog;
+export default BreedSelector;

@@ -7,12 +7,13 @@ class MultiDogs extends Component {
     constructor() {
         super();
         this.state = {
-            url: '',
+            url: [],
             num: 0
         }
     }
 
     handleNum = e => {
+        // e.event.preventDefault()
         this.setState({
             num: e.target.value
         })
@@ -36,6 +37,7 @@ class MultiDogs extends Component {
     }
 
     handleNewDogButton = e => {
+        e.preventDefault()
         const { num } = this.state;
         this.getMultiDogPicture(num)
     }
@@ -47,11 +49,15 @@ class MultiDogs extends Component {
         return (
             <div className="MultiDogs">
                 <h1>Multi Dog Pictures v1</h1>
-                <input type="number" min='1' max='15' value={num} onChange={this.handleNum} />
-                <button onClick={this.handleNewDogButton}>New Dog</button>
-                <br />
-                <Pet url={url} />
+                <form onSubmit={this.handleNewDogButton}>
+                    <input type="number" min='1' max='15' value={num} onChange={this.handleNum} />
+                    <br />
 
+                    {url.map(el => {
+                        return <Pet key={el} url={el} />
+                    })}
+
+                </form>
             </div>
         )
     }

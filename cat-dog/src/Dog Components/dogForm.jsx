@@ -18,6 +18,8 @@ class DogForm extends React.Component {
         this.getDogBreeds()
     }
 
+
+
     handleBreedChange = (event) => {
         const newBreed = event.target.value
         this.setState({
@@ -57,23 +59,33 @@ class DogForm extends React.Component {
                 breeds: allBreeds
             })
 
+            // this.breeds = allBreeds;
         } catch (error) {
             console.log("Oops All Errors!", error)
         }
     }
 
-    handleNewDogButton = (event) => {
+    handleNewDogButton = e => {
         const { getDogPicture } = this.props;
-        const { selectedBreed, numOfDogs } = this.state;
-        getDogPicture(selectedBreed, numOfDogs)
+        const { selectedBreed } = this.state;
+        getDogPicture(selectedBreed)
     }
 
     render() {
 
         console.log('state', this.state);
 
+        const { breeds, selectedBreed, numOfDogs } = this.state
         return (<>
+            <select onChange={this.handleBreedChange} value={selectedBreed}>
+                <option value=""></option>
+                {
+                    this.populateSelect()
+                }
+            </select>
             <button onClick={this.handleNewDogButton}>New Dog</button>
+            <button onClick={this.resetSelect}>Reset</button>
+
         </>)
     }
 }
