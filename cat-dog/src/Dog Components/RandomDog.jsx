@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import Selector from './Selector';
 import Pet from '../Utilities/Display';
-import DogForm from './dogForm';
 
 
 class RandomDog extends Component {
@@ -20,8 +19,7 @@ class RandomDog extends Component {
         this.getDogPicture()
     }
 
-    getDogPicture = async (selectedBreed, numOfDogs) => {
-        // const { selectedBreed } = this.state
+    getDogPicture = async () => {
         let dogURL = "https://dog.ceo/api/breeds/image/random"
         // axios request using try, catch and async, await
         try {
@@ -36,19 +34,20 @@ class RandomDog extends Component {
         }
 
     }
+    handleNewDogButton = (event) => {
+        this.getDogPicture()
+    }
 
     render() {
         const { url } = this.state
         return (
             <div className="RandomDog">
                 <h1>Random Dog Pictures v1</h1>
-                <DogForm
-                    getDogPicture={this.getDogPicture}
-                />
+                <button onClick={this.handleNewDogButton}>New Dog</button>
                 <br />
                 <Pet url={url} />
 
-            </div>
+            </div >
         )
     }
 }
