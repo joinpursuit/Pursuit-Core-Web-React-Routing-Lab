@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <nav>
-                <Link to="/dog/random"> Dog </Link>
+                <Link to="/dog"> Dog </Link>
                 <Link to="/cat"> Cat </Link>
             </nav>
             <p>Pick your animal!</p>

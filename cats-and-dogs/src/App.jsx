@@ -11,6 +11,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
 
+        <Route exact path="/dog" component={Dog} />
         <Route exact path="/dog/random" component={Dog} />
         <Route path="/dog/random/:num" component={Dog} />
         <Route path="/dog/:breed/:num" component={Dog} />
