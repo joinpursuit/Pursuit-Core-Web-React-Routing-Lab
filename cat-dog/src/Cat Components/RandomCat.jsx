@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Pet from '../Utilities/Display';
 
-
 class RandomDog extends Component {
     constructor() {
         super();
@@ -15,17 +14,17 @@ class RandomDog extends Component {
 
     // Loads an image when the component mounts
     componentDidMount() {
-        this.getDogPicture()
+        this.getCatPicture()
     }
 
     getCatPicture = async () => {
-        let dogURL = "https://dog.ceo/api/breeds/image/random"
+        let catURL = `//api.thecatapi.com/v1/images/search`
         // axios request using try, catch and async, await
         try {
-            const { data } = await axios.get(dogURL)
-            console.log(data)
+            const { data } = await axios.get(catURL)
+            console.log(data[0].url)
             this.setState({
-                url: data.message,
+                url: data[0].url,
             })
 
         } catch (error) {
