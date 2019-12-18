@@ -2,11 +2,17 @@ import React from 'react'
 
 const ImageForm = (props) => {
     return (
-        <form>
+        <form onSubmit={props.handleSubmit}>
             <label htmlFor="breed">
                 {props.animal.url.includes('dog') ? ' Dog ' : ' Cat '} 
                 Breed: </label>
-            <input type="text" name="breed" placeholder="Optional" onChange={props.changeState}/>
+            {/* <input type="text" name="breed" placeholder="Optional" onChange={props.changeState}/> */}
+            <select name="breed" onChange={props.changeState}>
+                <option value="Random">Random</option>
+                {props.allBreeds.map((breed, i) => {
+                    return <option value={breed} key={i}>{breed}</option>
+                })}
+            </select>
             <select name="num_img" onChange={props.changeState}>
                 <option value="1">1</option>
                 <option value="2">2</option>
