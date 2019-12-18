@@ -35,29 +35,23 @@ class MultiDogs extends Component {
         }
 
     }
+    componentDidUpdate(prevProps) {
+        if (this.props.num !== prevProps.num) {
+            this.getMultiDogPicture(this.props.num)
 
-    handleNewDogButton = e => {
-        e.preventDefault()
-        const { num } = this.state;
-        this.getMultiDogPicture(num)
+        }
     }
-
     render() {
-        console.log(this.state);
 
-        const { url, num } = this.state
+        const { url } = this.state
         return (
             <div className="MultiDogs">
                 <h1>Multi Dog Pictures v1</h1>
-                <form onSubmit={this.handleNewDogButton}>
-                    <input type="number" min='1' max='15' value={num} onChange={this.handleNum} />
-                    <br />
 
-                    {url.map(el => {
-                        return <Pet key={el} url={el} />
-                    })}
+                {url.map(el => {
+                    return <Pet key={el} url={el} />
+                })}
 
-                </form>
             </div>
         )
     }
