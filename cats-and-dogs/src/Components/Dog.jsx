@@ -8,7 +8,7 @@ export class Dog extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			breed: 'random',
+			breed: '',
 			num_img: 1,
 			urls: [],
 			breeds: []
@@ -16,9 +16,9 @@ export class Dog extends Component {
 	}
 	async componentDidMount() {
 		const [, animal , breed, num_img] = this.props.match.url.split('/');
-		await this.setState({ ...this.state, breed: breed || 'random', num_img: num_img || 1, animal});
+		await this.setState({ ...this.state, breed: breed || '', num_img: num_img || 1, animal});
 		console.log(this.state);
-		this.fetchDog();
+		this.state.breed.length > 0 && this.fetchDog();
 		this.fetchBreeds();
 	}
 	handleClick = (e) => {
@@ -44,9 +44,6 @@ export class Dog extends Component {
 			.then(res => this.setState({...this.state, breeds: Object.keys(res.data.message)}))
 			.catch(err => console.log(err));
 	}
-	displayImgs = () => {
-		return this.state.urls.map((src, i) => <img src={src} alt='dog' key={i}/>);
-	}
 	render() {
 		return (
 			<div>
@@ -55,8 +52,8 @@ export class Dog extends Component {
 					<ImageForm animal={this.props.match} changeState={this.handleChange} handleSubmit={this.handleClick} allBreeds={this.state.breeds}/>
 					<Button state={this.state} handleClick={this.handleClick} />
 				</main>
-				<div>
-					{this.displayImgs()}
+				<div className="images">
+					{this.state.urls.map((src, i) => <img src={src} alt='dog' key={i} />)}
 				</div>
 			</div>
 		)

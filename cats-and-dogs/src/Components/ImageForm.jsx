@@ -7,10 +7,12 @@ const ImageForm = (props) => {
                 {props.animal.url.includes('dog') ? ' Dog ' : ' Cat '} 
                 Breed: </label>
             {/* <input type="text" name="breed" placeholder="Optional" onChange={props.changeState}/> */}
-            <select name="breed" onChange={props.changeState}>
+            <select name={props.animal.url.includes('dog') ? 'breed' : 'breedId'} onChange={props.changeState}>
                 <option value="Random">Random</option>
                 {props.allBreeds.map((breed, i) => {
-                    return <option value={breed} key={i}>{breed}</option>
+                    return props.animal.url.includes('dog') ?
+                    <option value={breed} key={i}>{breed}</option> 
+                    : <option value={breed.breedId} key={breed.breedId}>{breed.name}</option> 
                 })}
             </select>
             <select name="num_img" onChange={props.changeState}>

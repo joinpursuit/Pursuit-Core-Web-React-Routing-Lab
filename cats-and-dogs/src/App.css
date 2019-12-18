@@ -36,11 +36,21 @@
     transform: rotate(360deg);
   }
 }
-
 .page-not-found {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
   font-size: 2rem;
+}
+img {
+  width: 200px;
+}
+.images {
+  padding: 1px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
