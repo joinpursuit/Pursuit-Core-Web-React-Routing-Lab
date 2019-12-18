@@ -4,7 +4,7 @@ class RandomCat extends Component {
     constructor() {
         super();
         this.state = {
-
+            urls: [],
         }
     }
 

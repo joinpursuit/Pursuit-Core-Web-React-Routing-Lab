@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom'
+import axios from 'axios'
 import Home from './Components/Home'
 import FeelingLucky from './Components/FeelingLucky'
 import RandomDog from './Components/RandomDog'
@@ -29,6 +30,7 @@ function App() {
         <Route path="/cat/random/:num" component={MultiRandomCats} />
         <Route path="/cat/random" component={RandomCat} />
         <Route path="/all/random" component={FeelingLucky} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   );

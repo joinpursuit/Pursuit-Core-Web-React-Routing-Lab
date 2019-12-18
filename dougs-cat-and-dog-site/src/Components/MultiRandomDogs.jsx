@@ -4,7 +4,8 @@ class MultiRandomDogs extends Component {
     constructor() {
         super();
         this.state = {
-
+            urls: [],
+            dogNum: 1,
         }
     }
 

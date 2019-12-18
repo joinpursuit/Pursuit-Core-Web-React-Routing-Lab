@@ -4,7 +4,8 @@ class MultiRandomCats extends Component {
     constructor() {
         super();
         this.state = {
-
+            urls: [],
+            catNum: 1,
         }
     }
 
