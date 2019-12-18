@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./Components/Home";
 import Dog from "./Components/Dog";
 import Cat from "./Components/Cat";
+import PageNotFound from './Components/PageNotFound';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path="/dog/:breed" component={Dog} />
 
         <Route path="/cat" component={Cat} />
+
+        <Route component={PageNotFound} />
       </Switch>
     </div>
   );
