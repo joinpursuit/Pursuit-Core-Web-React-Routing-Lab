@@ -18,7 +18,7 @@ class RandomDog extends Component {
     }
 
     getCatPicture = async () => {
-        let catURL = `//api.thecatapi.com/v1/images/search`
+        let catURL = `https://api.thecatapi.com/v1/images/search`
         // axios request using try, catch and async, await
         try {
             const { data } = await axios.get(catURL)
