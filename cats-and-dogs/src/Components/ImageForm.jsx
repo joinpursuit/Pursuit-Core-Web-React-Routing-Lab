@@ -1,11 +1,13 @@
 import React from 'react'
 
-const ImageForm = () => {
+const ImageForm = (props) => {
     return (
         <form>
-            <label htmlFor="breed">Breed: </label>
-            <input type="text" name="breed" placeholder="Optional" />
-            <select name="num_of_img">
+            <label htmlFor="breed">
+                {props.animal.url.includes('dog') ? ' Dog ' : ' Cat '} 
+                Breed: </label>
+            <input type="text" name="breed" placeholder="Optional" onChange={props.changeState}/>
+            <select name="num_img" onChange={props.changeState}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

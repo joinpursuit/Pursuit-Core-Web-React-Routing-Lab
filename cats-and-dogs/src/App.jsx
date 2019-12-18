@@ -10,8 +10,12 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/dog/:num" component={Dog} />
-        <Route path="/dog/" component={Dog} />
+
+        <Route exact path="/dog/random" component={Dog} />
+        <Route path="/dog/random/:num" component={Dog} />
+        <Route path="/dog/:breed/:num" component={Dog} />
+        <Route path="/dog/:breed" component={Dog} />
+
         <Route path="/cat" component={Cat} />
       </Switch>
     </div>

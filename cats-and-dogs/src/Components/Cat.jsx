@@ -8,7 +8,7 @@ export class Cat extends Component {
             <div>
                 <header><Link to="/">Home</Link></header>
                 <main>
-                    <ImageForm />
+                    <ImageForm animal={this.props.match} />
                 </main>
             </div>
         )
