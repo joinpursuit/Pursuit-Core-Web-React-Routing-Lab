@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {
-    Link,
-    Route,
-    Switch
-} from 'react-router-dom';
+
 
 class RandomDogs extends Component {
     constructor(props) {
@@ -35,16 +31,17 @@ class RandomDogs extends Component {
     }
 
     handleNewDogButton = (e) => {
-       
+        const {url} = this.state
+       this.getRandomDog(url)
     }
 
     render() {
          const { url } = this.state
         return(
             <div>
-              <img src={url} alt='dog' ></img>
+              <img src={url} alt='dog' width='300px'></img>
                 <br></br>
-              <button>Get Dog</button>
+              <button onClick={this.handleNewDogButton}>Get New Dog</button>
             </div> 
            
         )
