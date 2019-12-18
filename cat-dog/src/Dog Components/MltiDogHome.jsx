@@ -26,6 +26,9 @@ class MultiDogHome extends Component {
 
         return (
             <form onSubmit={this.onSubmit}>
+                <br />
+                <h1>Multi Dog Pictures v1</h1>
+                <p>How many dogs should load</p>
                 <input type="number" min='1' max='15' value={num} onChange={this.handleNum} />
                 <MultiDogs num={num} />
             </form>

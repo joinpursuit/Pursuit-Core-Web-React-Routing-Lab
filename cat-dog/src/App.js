@@ -4,7 +4,7 @@ import './App.css';
 import DogApp from './Dog Components/DogApp'
 import { Link, Switch, Route } from 'react-router-dom';
 import Home from './Utilities/Home'
-
+import CatApp from './Cat Components/CatApp'
 
 class App extends Component {
 
@@ -21,6 +21,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/dog" component={DogApp} />
+          <Route path='/cat' component={CatApp} />
         </Switch>
       </div>
     )

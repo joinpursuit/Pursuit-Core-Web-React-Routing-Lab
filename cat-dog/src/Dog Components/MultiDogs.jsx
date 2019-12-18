@@ -8,16 +8,10 @@ class MultiDogs extends Component {
         super();
         this.state = {
             url: [],
-            num: 0
         }
     }
 
-    handleNum = e => {
-        // e.event.preventDefault()
-        this.setState({
-            num: e.target.value
-        })
-    }
+
 
     getMultiDogPicture = async (num) => {
         let dogURL = `https://dog.ceo/api/breeds/image/random/${Number(num)}`
@@ -46,8 +40,6 @@ class MultiDogs extends Component {
         const { url } = this.state
         return (
             <div className="MultiDogs">
-                <h1>Multi Dog Pictures v1</h1>
-
                 {url.map(el => {
                     return <Pet key={el} url={el} />
                 })}
