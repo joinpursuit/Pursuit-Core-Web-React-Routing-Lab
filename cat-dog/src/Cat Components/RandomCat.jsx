@@ -41,7 +41,7 @@ class RandomDog extends Component {
         return (
             <div className="RandomDog">
                 <h1>Random Dog Pictures v1</h1>
-                <button onClick={this.handleNewCatButton}>New Dog</button>
+                <button onClick={this.handleNewCatButton}>New Cat</button>
                 <br />
                 <Pet url={url} />
 
