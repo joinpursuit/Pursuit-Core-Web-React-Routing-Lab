@@ -10,11 +10,11 @@ class RandomCatByNum extends React.Component {
             catImgURLS: []
         }
     }
-    componentDidMount = () => {
-        this.fetchMultipleCatImages()
+    componentDidMount = async () => {
+       await this.fetchMultipleCatImages()
     }
 
-    
+
     handleNumberOfCats = async (event) => {
         console.log(event.target.value)
         this.setState({
@@ -31,9 +31,14 @@ class RandomCatByNum extends React.Component {
             const result = await axios.get(dogAPI)
             const catImgData = result.data
             console.log(catImgData)
+
+            this.setState({
+                imgURLS: catImgData
+            })
         } catch(error){
             console.log('err', error)
         }
+        this.displayCatImages()
     }
     displayCatImages = async () => {
         const {imgURLS} = this.state
@@ -43,6 +48,7 @@ class RandomCatByNum extends React.Component {
              catImgArr.push(url.url)
         })
         console.log(catImgArr)
+        console.log(imgURLS)
         this.setState({
             catImgURLS: catImgArr
         })
@@ -54,7 +60,7 @@ class RandomCatByNum extends React.Component {
                 <div>
                     <h1>RandomCatByNum</h1>
                     <input type='number' onChange={this.handleNumberOfCats} value={numberOfCats}></input>
-                    <button onClick={this.displayCatImages}>Get Cats</button>
+                    <button onClick={this.fetchMultipleCatImages}>Get Cats</button>
                 </div>
                 <div>
                     <ul>
