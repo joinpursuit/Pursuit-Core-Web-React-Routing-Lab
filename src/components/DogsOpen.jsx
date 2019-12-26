@@ -14,7 +14,9 @@ import axios from 'axios';
 class DogsOpen extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      dogUrls: []
+    };
   }
 
   render() {

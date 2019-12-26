@@ -7,6 +7,7 @@ import DogsOpen from './components/DogsOpen';
 import DogsBreed from './components/DogsBreed';
 import CatsOpen from './components/CatsOpen';
 import MixOpen from './components/MixOpen';
+import Catch404 from './components/Catch404';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/cat/random" component={CatsOpen} />
           <Route path="/cat/random/:num" component={CatsOpen} />
           <Route path="/all/random" component={MixOpen} />
+          <Route component={Catch404} />
         </Switch>
       </div>
     </div>
