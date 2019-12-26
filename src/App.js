@@ -1,14 +1,19 @@
 import React from 'react';
-import { NavLink, Link, Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
 
 import './App.css';
+import StageHome from './components/StageHome';
+import DogsOpen from './components/DogsOpen';
+import DogsBreed from './components/DogsBreed';
+import CatsOpen from './components/CatsOpen';
+import MixOpen from './components/MixOpen';
 
 
 function App() {
   return (
     <div className="App">
       <header>
-        <h1>Cats & Dogs Server</h1>
+        <h1>Cats & Dogs Fake Server</h1>
         <p>Copyright ©2019 by Joseph P. Pasaoa. All rights reserved.</p>
       </header>
       <nav>
