@@ -1,17 +1,18 @@
 /*
 Joseph P. Pasaoa
-MixOpen Component | Cats & Dogs Fake Server
+Cats Component | Cats & Dogs Fake Server
 */
 
 
 /* IMPORTS */
 import React, { Component } from 'react';
-// import './MixOpen.css';
 import axios from 'axios';
+
+// import './Cats.css';
 
 
 /* MAIN */
-class MixOpen extends Component {
+export default class Cats extends Component {
   constructor() {
     super();
     this.state = {};
@@ -19,12 +20,8 @@ class MixOpen extends Component {
 
   render() {
     return (
-      <>MixOpen
+      <>Cats
       </>
     );
   }
 }
-
-
-/* EXPORT */
-export default MixOpen;

@@ -1,17 +1,18 @@
 /*
 Joseph P. Pasaoa
-CatsOpen Component | Cats & Dogs Fake Server
+CatsAndDogs Component | Cats & Dogs Fake Server
 */
 
 
 /* IMPORTS */
 import React, { Component } from 'react';
-// import './CatsOpen.css';
 import axios from 'axios';
+
+// import './CatsAndDogs.css';
 
 
 /* MAIN */
-class CatsOpen extends Component {
+export default class CatsAndDogs extends Component {
   constructor() {
     super();
     this.state = {};
@@ -19,12 +20,8 @@ class CatsOpen extends Component {
 
   render() {
     return (
-      <>CatsOpen
+      <>CatsAndDogs
       </>
     );
   }
 }
-
-
-/* EXPORT */
-export default CatsOpen;

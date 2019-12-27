@@ -1,17 +1,18 @@
 /*
 Joseph P. Pasaoa
-DogsBreed Component | Cats & Dogs Fake Server
+LandingStage Component | Cats & Dogs Fake Server
 */
 
 
 /* IMPORTS */
 import React, { Component } from 'react';
-// import './DogsBreed.css';
 import axios from 'axios';
+
+// import './LandingStage.css';
 
 
 /* MAIN */
-class DogsBreed extends Component {
+export default class LandingStage extends Component {
   constructor() {
     super();
     this.state = {};
@@ -19,12 +20,8 @@ class DogsBreed extends Component {
 
   render() {
     return (
-      <>DogsBreed
+      <>LandingStage
       </>
     );
   }
 }
-
-
-/* EXPORT */
-export default DogsBreed;

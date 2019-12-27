@@ -1,16 +1,23 @@
+/*
+Joseph P. Pasaoa
+App MAIN | Cats and Dogs Fake Server Lab
+*/
+
+
+/* IMPORTS */
 import React from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import StageHome from './components/StageHome';
-import DogsOpen from './components/DogsOpen';
-import DogsBreed from './components/DogsBreed';
-import CatsOpen from './components/CatsOpen';
-import MixOpen from './components/MixOpen';
+import LandingStage from './components/LandingStage';
+import Dogs from './components/Dogs';
+import Cats from './components/Cats';
+import CatsAndDogs from './components/CatsAndDogs';
 import Catch404 from './components/Catch404';
 
 
-function App() {
+/* MAIN */
+export default function App() {
   return (
     <div className="App">
       <header>
@@ -35,18 +42,16 @@ function App() {
       </nav>
       <div id="stage">
         <Switch>
-          <Route exact path="/" component={StageHome} />
-          <Route path="/dog/random" component={DogsOpen} />
-          <Route path="/dog/random/:num" component={DogsOpen} />
-          <Route path="/dog/:breed" component={DogsBreed} />
-          <Route path="/cat/random" component={CatsOpen} />
-          <Route path="/cat/random/:num" component={CatsOpen} />
-          <Route path="/all/random" component={MixOpen} />
+          <Route exact path="/" component={LandingStage} />
+          <Route path="/dog/random/:num" component={Dogs} />
+          <Route path="/dog/random" component={Dogs} />
+          <Route path="/dog/:breed" component={Dogs} />
+          <Route path="/cat/random/:num" component={Cats} />
+          <Route path="/cat/random" component={Cats} />
+          <Route path="/all/random" component={CatsAndDogs} />
           <Route component={Catch404} />
         </Switch>
       </div>
     </div>
   );
 }
-
-export default App;
