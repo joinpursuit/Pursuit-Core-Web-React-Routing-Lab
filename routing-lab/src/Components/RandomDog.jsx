@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
-// import { render } from '@testing-library/react';
 
 class RadndomDog extends Component {
     constructor() {
         super();
         this.initialState = {
-            urls: [],
-            picturesLoading: true
+            url: []
         }
         this.state = this.initialState
     }
@@ -20,12 +18,9 @@ class RadndomDog extends Component {
     handleNewDogButton = () => {
         this.getDogPicture();
     }
-    
+
     getDogPicture = () => {
 
-        this.setState({
-            picturesLoading: true
-        })
         let dogAPIURL = `https://dog.ceo/api/breeds/image/random`;
 
         axios
@@ -34,8 +29,7 @@ class RadndomDog extends Component {
                 console.log(data.message)
 
                 this.setState({
-                    urls: data.message,
-                    picturesLoading: false
+                    url: data.message,
                 })
             })
             .catch((error) => {
@@ -44,21 +38,21 @@ class RadndomDog extends Component {
     }
 
     render() {
-        const { urls, picturesLoading } = this.state
+        const { url } = this.state
 
         return (
             <div className="App">
                 <h1>Random Dog Pictures</h1>
-                
+
                 <br />
-                
+
                 <button onClick={this.handleNewDogButton}>New Dog</button>
-                
+
                 <br />
                 <br />
 
-                <img src={urls}></img>
-                
+                <img src={url} alt="RandomDog"></img>
+
             </div>
         )
     }

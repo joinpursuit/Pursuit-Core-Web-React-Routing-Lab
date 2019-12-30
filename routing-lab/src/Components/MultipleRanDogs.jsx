@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
 
-class MultipleRanDog extends Component {
+class MultipleRanDogs extends Component {
     constructor() {
         super();
         this.initialState = {
             urls: [],
-            picturesLoading: true,
             number: 1
         }
         this.state = this.initialState
@@ -25,15 +24,13 @@ class MultipleRanDog extends Component {
         console.log('Current Number', newNumber)
     }
 
-    handleNewDogButton = (event) => {
+    handleNewDogButton = () => {
         const { number } = this.state
         this.getDogPictures(number)
     }
 
     getDogPictures = (number) => {
-        this.setState({
-            picturesLoading: true
-        })
+
         let dogAPIURL = `https://dog.ceo/api/breeds/image/random/${number}`;
 
         axios
@@ -43,7 +40,6 @@ class MultipleRanDog extends Component {
 
                 this.setState({
                     urls: data.message,
-                    picturesLoading: false
                 })
             })
             .catch((error) => {
@@ -61,7 +57,7 @@ class MultipleRanDog extends Component {
 
                 <br />
 
-                <input type="number" min="1" max="10" onChange={this.selectNewNumber} value={number}/>
+                <input type="number" min="1" max="10" onChange={this.selectNewNumber} value={number} />
 
                 <br />
                 <br />
@@ -79,4 +75,4 @@ class MultipleRanDog extends Component {
     }
 }
 
-export default MultipleRanDog;
+export default MultipleRanDogs;
