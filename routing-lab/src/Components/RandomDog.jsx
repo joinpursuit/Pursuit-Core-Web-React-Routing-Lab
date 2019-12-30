@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 
 class RadndomDog extends Component {
     constructor() {
@@ -17,6 +17,10 @@ class RadndomDog extends Component {
         this.getDogPicture();
     }
 
+    handleNewDogButton = () => {
+        this.getDogPicture();
+    }
+    
     getDogPicture = () => {
 
         this.setState({
@@ -45,8 +49,16 @@ class RadndomDog extends Component {
         return (
             <div className="App">
                 <h1>Random Dog Pictures</h1>
-                <img src={urls}></img>
+                
                 <br />
+                
+                <button onClick={this.handleNewDogButton}>New Dog</button>
+                
+                <br />
+                <br />
+
+                <img src={urls}></img>
+                
             </div>
         )
     }
