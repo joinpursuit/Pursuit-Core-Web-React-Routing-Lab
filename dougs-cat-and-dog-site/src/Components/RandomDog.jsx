@@ -5,21 +5,19 @@ class RandomDog extends Component {
     constructor() {
         super();
         this.state = {
-            urls: []
+            url: ""
         }
     }
 
 
     getDogPictures = async () => {
-        let dogNum = this.props.match.params.num
-
-        let dogAPIURL = `https://dog.ceo/api/breeds/image/random/${dogNum}`
+        let dogAPIURL = `https://dog.ceo/api/breeds/image/random`
 
         try {
             const { data } = await axios.get(dogAPIURL)
             console.log(data)
             this.setState({
-                urls: data.message,
+                url: data.message,
             })
 
         } catch (error) {
@@ -36,22 +34,13 @@ class RandomDog extends Component {
         this.getDogPictures();
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.match.params.num !== this.props.match.params.num) {
-            this.getDogPictures();
-        }
-    }
-
     render() {
-        const dogArr = this.state.urls;
-        let dogList = []
-        for(let dogURL of dogArr) {
-            dogList.push(<img src={dogURL} alt="Good Dog"></img>)
-        }
+        const { url } = this.state;
+
         return (
             <div>
                 <h1>One Random Dog!</h1>
-                {dogList}
+                <img src={url} alt="Good Dog"></img>
             </div>
         )
     }
