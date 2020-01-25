@@ -6,21 +6,15 @@ Viewer Component | Cats & Dogs Fake Server
 
 /* IMPORTS */
 import React from 'react';
-// import './Viewer.css';
+import './Viewer.css';
 
 
-/* MAIN */
+/* COMPONENT */
 const Viewer = (props) => {
-  const { imgUrls } = props;
-  let display = null;
-  console.log(imgUrls);
-    display = imgUrls.map(url => {
-        return <img src={url} alt='temp' key={url} />
-    });
-  console.log(display);
+
   return (
-    <>Viewer
-    { display }
+    <>
+    { props.onDisplay }
     </>
   );
 }

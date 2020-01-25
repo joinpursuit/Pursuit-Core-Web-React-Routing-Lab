@@ -1,0 +1,11 @@
+/*
+Joseph P. Pasaoa
+NavBar Component Styling | React Cats & Dogs Fake Server Lab
+*/
+
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr);
+}

@@ -4,4 +4,17 @@ Viewer Css | React Cats & Dogs Fake Server Lab
 */
 
 
+viewer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 
+}
+
+div#stage img {
+
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  
+}

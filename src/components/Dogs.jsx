@@ -18,12 +18,21 @@ export default class Dogs extends Component {
   constructor() {
     super();
     this.state = {
-      imgUrls: null
+      imgData: null
     };
   }
 
   componentDidMount() {
     this.apiComm();
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log('prevProps', prevProps)
+    console.log('props', this.props);
+    if (prevProps.match.params !== this.props.match.params) {
+      this.apiComm();
+      console.log('---- UPDATED -----')
+    }
   }
 
   apiComm = async () => {
@@ -37,19 +46,40 @@ export default class Dogs extends Component {
     } catch(err) {
       console.log("error: ", err);
     }
+    console.log(response);
     this.setState({
-        imgUrls: response.data.message
+        imgData: response.data.message
     });
   }
 
+  makeImg = (url) => {
+    return (
+      <img src={url} alt="dog" key={url} />
+    )
+  }
+
   render() {
-    const { imgUrls } = this.state;
+    const { imgData } = this.state;
+    let imgArray = [];
+    if (imgData) {
+      if (Array.isArray(imgData)) {
+        imgArray = imgData.map(url => this.makeImg(url));
+      } else {
+        console.log("single");
+        imgArray = this.makeImg(imgData);
+      }
+    }
+
     return (
       <>
-      <Console />
-      <Viewer 
-        imgUrls={imgUrls}
-      />
+      <console>
+        <Console />
+      </console>
+      <viewer>
+        <Viewer 
+          imgArray={imgArray}
+        />
+      </viewer>
       </>
     );
   }

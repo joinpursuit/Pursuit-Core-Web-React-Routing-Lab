@@ -1,0 +1,11 @@
+/*
+Joseph P. Pasaoa
+ImageCard CSS Styling | React Cats & Dogs Fake Server Lab
+*/
+
+
+.imagecard {
+  height: 110px;
+  width: auto;
+  object-fit: cover;
+}

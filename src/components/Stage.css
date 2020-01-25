@@ -1,0 +1,12 @@
+/*
+Joseph P. Pasaoa
+Stage Component Styling | React Cats & Dogs Fake Server Lab
+*/
+
+
+div#stage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 110px auto;
+  /* overflow: scroll; */
+}
