@@ -5,7 +5,7 @@ class MultiRandomCats extends Component {
     constructor() {
         super();
         this.state = {
-            url: '',
+            urls: [],
             catNum: 1,
             catArr: []
         }
@@ -22,27 +22,29 @@ class MultiRandomCats extends Component {
     }
 
     handleNewCatBtn = () => {
-        const catURL = this.state.url;
-        let catNum = this.state.catNum;
-        let catArr = this.state.catArr
-        for(let i = 0; i < catNum; i++) {
-            this.getCatPictures()
-            catArr.push(catURL)
-            this.setState({
-                catArr: catArr
-            })
-        }
-        console.log("CatArr", catArr)
+        // const catURL = this.state.url;
+        // let catNum = this.state.catNum;
+        // let catArr = this.state.catArr
+        // for(let i = 0; i < catNum; i++) {
+        //     this.getCatPictures()
+        //     catArr.push(catURL)
+        //     this.setState({
+        //         catArr: catArr
+        //     })
+        // }
+        // console.log("CatArr", catArr)
+        this.getCatPictures()
     }
 
     getCatPictures = async () => {
-        let catAPIURL = `https://api.thecatapi.com/v1/images/search`
+        let catNum = this.state.catNum
+        let catAPIURL = `https://api.thecatapi.com/v1/images/search?limit=${catNum}`
 
         try {
             const { data } = await axios.get(catAPIURL)
             console.log(data)
             this.setState({
-                url: data[0].url,
+                urls: data,
             })
 
         } catch (error) {
@@ -52,10 +54,10 @@ class MultiRandomCats extends Component {
     }
 
     render() {
-        const { catArr } = this.state
+        const { urls } = this.state
         let catList = []
-        for(let catImg of catArr) {
-            catList.push(<img src={catImg} alt="Pawesome cat"></img>)
+        for(let catImg of urls) {
+            catList.push(<img src={catImg.url} alt="Pawesome cat"></img>)
         }
         return (
             <div>

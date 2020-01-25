@@ -20,7 +20,6 @@ function App() {
         <Link to="/dog/breed">RANDOM DOG BY BREED</Link>{" "}
         <Link to="/cat/random">RANDOM CAT</Link>{" "}
         <Link to="/cat/random/:num">MULTIPLE RANDOM CATS</Link>{" "}
-        <Link to="/all/random">FEELING LUCKY?</Link>{" "}
       </nav>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -29,7 +28,6 @@ function App() {
         <Route path="/dog/breed" component={RandomDogBreed} />
         <Route path="/cat/random/:num" component={MultiRandomCats} />
         <Route path="/cat/random" component={RandomCat} />
-        <Route path="/all/random" component={FeelingLucky} />
         {/* <Route component={NotFound} /> */}
       </Switch>
     </div>
