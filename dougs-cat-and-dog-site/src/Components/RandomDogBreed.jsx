@@ -49,7 +49,7 @@ class RandomDogBreed extends Component {
 
     getDogPicture = async (newBreed) => {
 
-        let dogAPIURL = "https://dog.ceo/api/breeds/image/random"
+        let dogAPIURL =`https://dog.ceo/api/breed/${newBreed}/images/random`
 
         try {
             const { data } = await axios.get(dogAPIURL)
@@ -69,12 +69,21 @@ class RandomDogBreed extends Component {
     }
 
     componentDidMount() {
-        this.getDogPicture();
+        this.getDogBreeds();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.num !== this.props.match.params.num) {
+            this.getDogPictures();
+        }
     }
 
     render() {
-        const { breeds, selectedBreed } = this.state;
-        
+        const { url, selectedBreed } = this.state;
+        let displayDog
+        if (selectedBreed !== '') {
+            displayDog = <img src={url} alt="Good Dog"></img>
+        } 
         return (
             <div>
                 <h1>Random Dog By Breed!</h1>
@@ -84,6 +93,7 @@ class RandomDogBreed extends Component {
                         this.populateSelect()
                     }
                 </select>
+                {displayDog}
             </div>
         )
     }

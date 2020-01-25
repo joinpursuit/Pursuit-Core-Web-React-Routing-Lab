@@ -30,7 +30,7 @@ function App() {
         <Route path="/cat/random/:num" component={MultiRandomCats} />
         <Route path="/cat/random" component={RandomCat} />
         <Route path="/all/random" component={FeelingLucky} />
-        <Route component={NotFound} />
+        {/* <Route component={NotFound} /> */}
       </Switch>
     </div>
   );
