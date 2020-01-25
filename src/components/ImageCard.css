@@ -5,7 +5,7 @@ ImageCard CSS Styling | React Cats & Dogs Fake Server Lab
 
 
 .imagecard {
-  height: 110px;
-  width: auto;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
 }

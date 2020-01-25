@@ -13,9 +13,9 @@ import './Viewer.css';
 const Viewer = (props) => {
 
   return (
-    <>
-    { props.onDisplay }
-    </>
+    <div className="viewer">
+      { props.onDisplay }
+    </div>
   );
 }
 
