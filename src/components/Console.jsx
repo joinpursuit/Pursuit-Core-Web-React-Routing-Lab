@@ -15,15 +15,22 @@ Console Component | Cats & Dogs Fake Server
 
 /* COMPONENT */
 const Console = (props) => {
+  const imageLabel = 
+    <>
+      <Route path="/dogs">dog</Route>
+      <Route path="/cats">cat</Route>
+      <Route path="/all">dog & cat</Route>
+    </>
+  ;
+
 
   return (
     <form onSubmit={props.handleSubmit}>
-      <button type="submit" className="btn-get">Get Animals</button>
       <Switch>
         {/* <Route path="/all/random" component={CatsAndDogs} /> */}
         {/* NUMBER */}
         <Route exact path="/*/random">
-          <label htmlFor="quantityNum">How many images would you like (1-10)?</label>
+          <label htmlFor="quantityNum">How many {imageLabel} images would you like (1-10)?</label>
           <input 
             type="number" 
             min="1" 
@@ -36,6 +43,7 @@ const Console = (props) => {
         </Route>
         {/* <Route path="/dogs/:breed" component={Dogs} /> */}
       </Switch>
+      <button type="submit" className="btn-get">Get Animals</button>
     </form>
   );
 }
