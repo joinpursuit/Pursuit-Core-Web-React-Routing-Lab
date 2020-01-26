@@ -1,63 +1,66 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import ImageForm from './ImageForm';
 import Button from './Button';
 import axios from 'axios';
 
-export class Dog extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			breed: '',
-			num_img: 1,
-			urls: [],
-			breeds: []
-		}
+const Dog = (props) => {
+	const [, animal, breed, num_img] = props.match.url.split('/');
+	const [state, setState] = useState({urls: [], allBreeds: [], num_img: num_img, animal: animal, breed: 'random'})
+
+	const get = async () => {
+		await setState({ ...state, breed: breed || '', num_img: num_img || 1, animal: animal });
+		console.log(state);
+		state.allBreeds.length > 0 && fetchDog();
 	}
-	async componentDidMount() {
-		const [, animal , breed, num_img] = this.props.match.url.split('/');
-		await this.setState({ ...this.state, breed: breed || '', num_img: num_img || 1, animal});
-		console.log(this.state);
-		this.state.breed.length > 0 && this.fetchDog();
-		this.fetchBreeds();
-	}
-	handleClick = (e) => {
+
+	useEffect(() => {
+		fetchBreeds();
+		get()
+	}, [])
+
+
+
+	const handleClick = (e) => {
 		e.preventDefault();
-		this.fetchDog();
+		fetchDog();
 	}
-	handleChange = (e) => {
-		this.setState({ ...this.state, [e.target.name]: e.target.value })
+
+	const handleChange = (e) => {
+		setState({ ...state, [e.target.name]: e.target.value })
 	}
-	fetchDog = () => {
-		const { breed, num_img } = this.state;
+
+	const fetchDog = () => {
+		const { breed, num_img } = state;
 
 		let url = `https://dog.ceo/api/
 		${breed === '' || breed === 'random' ? 'breeds/image/random/' : `breed/${breed}/images/random/`}
 		${num_img}`;
 
 		axios(url)
-			.then(res => this.setState({ ...this.state, urls: res.data.message }))
+			.then(res => setState({ ...state, urls: res.data.message }))
 			.catch(err => console.log(err));
 	}
-	fetchBreeds = () => {
+
+	const fetchBreeds = () => {
 		axios('https://dog.ceo/api/breeds/list/all')
-			.then(res => this.setState({...this.state, breeds: Object.keys(res.data.message)}))
+			.then(res => setState({ ...state, allBreeds: Object.keys(res.data.message) }))
 			.catch(err => console.log(err));
 	}
-	render() {
-		return (
-			<div>
-				<header><Link to="/">Home</Link></header>
-				<main>
-					<ImageForm animal={this.props.match} changeState={this.handleChange} handleSubmit={this.handleClick} allBreeds={this.state.breeds}/>
-					<Button state={this.state} handleClick={this.handleClick} />
-				</main>
-				<div className="images">
-					{this.state.urls.map((src, i) => <img src={src} alt='dog' key={i} />)}
-				</div>
+
+	return (
+		<div>
+			<header><Link to="/">Home</Link></header>
+			<main>
+				<ImageForm animal={props.match} changeState={handleChange} handleSubmit={handleClick} allBreeds={state.allBreeds} />
+				<Button state={state} handleClick={handleClick} />
+			</main>
+			<div className="images">
+				{state.urls.map((src, i) => <img src={src} alt='dog' key={i} />)}
 			</div>
-		)
-	}
+		</div>
+	)
+
 }
 
 export default Dog; 
