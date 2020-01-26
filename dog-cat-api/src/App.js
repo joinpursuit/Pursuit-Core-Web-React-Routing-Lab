@@ -9,7 +9,7 @@ import CatsByNumber from './Components/CatsByNumber';
 // import ErrorNotFound from './Components/ErrorNotFound';
 
 // import Randomdog from './Components/RandomDogs';
-import './App.css';
+// import './App.css';
 
 function App () {
  
