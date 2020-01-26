@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.randomDog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
