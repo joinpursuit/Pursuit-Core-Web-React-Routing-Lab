@@ -17,7 +17,7 @@ const ImageCard = (props) => {
 
   return (
     <>
-      <img src={props.url} alt="random pet" className="imagecard" />
+      <img src={props.url} alt={props.alt} className="imagecard" />
     </>
   );
 }
