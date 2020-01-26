@@ -63,6 +63,10 @@ class Stage extends Component {
         response = await this.axiosCall(`https://dog.ceo/api/breeds/image/random/${howMany}`);
         newImagesArr = response.data.message;
         break;
+      case "/cats/random/one":
+        response = await this.axiosCall(`https://api.thecatapi.com/v1/images/search`);
+        newImagesArr = [ response.data[0].url ];
+        break;
       default:
         console.log("newImagesArr: ", newImagesArr);
         throw new Error("You're not supposed to be here.");
