@@ -8,5 +8,6 @@ ImageSpot CSS Styling | React Cats & Dogs Fake Server Lab
   height: inherit;
   width: inherit;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }

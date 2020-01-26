@@ -38,5 +38,6 @@ html, body, div#root, .App {
   position: relative;
   width: auto;
   height: 100vh;
-  background-color: #444;
+  background-color: #222;
+  border-left: solid 4px #ddd;
 }
