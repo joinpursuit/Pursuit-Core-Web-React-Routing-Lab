@@ -22,7 +22,7 @@ const Console = (props) => {
       <Switch>
         {/* <Route path="/all/random" component={CatsAndDogs} /> */}
         {/* NUMBER */}
-        <Route exact path="/*/random/*">
+        <Route exact path="/*/random">
           <label htmlFor="quantityNum">How many images would you like (1-10)?</label>
           <input 
             type="number" 

@@ -5,9 +5,15 @@ Viewer Css | React Cats & Dogs Fake Server Lab
 
 
 .viewer {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 0 1 50%;
+  height: auto;
 
   padding: 0 11px;
+  margin-top: 11px;
 }

@@ -14,6 +14,7 @@ Stage Component | Cats and Dogs Fake Server Lab
     import './Stage.css';
     import Console from './Console';
     import Viewer from './Viewer';
+    import ImageSpot from './ImageSpot';
     import ImageCard from './ImageCard';
     // import HomePage from '../pages/HomePage';
     // import Dogs from './components/Dogs';
@@ -26,7 +27,7 @@ Stage Component | Cats and Dogs Fake Server Lab
 class Stage extends Component {
   state = {
     images: [],
-    quantityNum: 1
+    quantityNum: 5
   }
 
   handleChange = (e) => {
@@ -51,14 +52,19 @@ class Stage extends Component {
 
   getImages = async () => {
     const path = this.props.location.pathname;
-    let newImagesArr = null;
+    const howMany = this.state.quantityNum;
+    let response, newImagesArr = null;
     switch (path) {
       case "/dogs/random/one":
-        const response = await this.axiosCall("https://dog.ceo/api/breeds/image/random");
+        response = await this.axiosCall(`https://dog.ceo/api/breeds/image/random`);
         newImagesArr = [ response.data.message ];
         break;
+      case "/dogs/random":
+        response = await this.axiosCall(`https://dog.ceo/api/breeds/image/random/${howMany}`);
+        newImagesArr = response.data.message;
+        break;
       default:
-        console.log(response);
+        console.log("newImagesArr: ", newImagesArr);
         throw new Error("You're not supposed to be here.");
     }
     this.setState({ images: newImagesArr });
@@ -68,14 +74,19 @@ class Stage extends Component {
   render () {
     const { images, quantityNum } = this.state;
 
-    const onDisplay = images.map(image => {
-        return (
-          <ImageCard
-            key={image} 
-            url={image} 
-          />
-        );
-    });
+    let onDisplay = null;
+    if (images.length === 1) {
+      onDisplay = <ImageSpot url={images[0]} />;
+    } else {
+      onDisplay = images.map(image => {
+          return (
+            <ImageCard
+              key={image} 
+              url={image} 
+            />
+          );
+      });
+    }
 
 
     return (
