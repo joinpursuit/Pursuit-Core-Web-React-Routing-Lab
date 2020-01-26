@@ -27,8 +27,17 @@ Stage Component | Cats and Dogs Fake Server Lab
 class Stage extends Component {
   state = {
     images: [],
-    quantityNum: 5
+    quantityNum: 5,
+    styleQuantOpacity: 0
   }
+
+
+  componentDidUpdate (prevProps, prevState) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.makeStyleQuantConsole();
+    }
+  }
+
 
   handleChange = (e) => {
     this.setState({
@@ -67,6 +76,10 @@ class Stage extends Component {
         response = await this.axiosCall(`https://api.thecatapi.com/v1/images/search`);
         newImagesArr = [ response.data[0].url ];
         break;
+      case "/cats/random":
+        response = await this.axiosCall(`https://api.thecatapi.com/v1/images/search?limit=${howMany}`);
+        newImagesArr = response.data.map(obj => obj.url);
+        break;
       default:
         console.log("newImagesArr: ", newImagesArr);
         throw new Error("You're not supposed to be here.");
@@ -74,9 +87,18 @@ class Stage extends Component {
     this.setState({ images: newImagesArr });
   }
 
+  makeStyleQuantConsole = () => {
+    if (this.props.location.pathname.includes("one")) {
+        this.setState({ styleQuantOpacity: 0 });
+    } else {
+        this.setState({ styleQuantOpacity: 1 });
+    }
+    
+  }
+
 
   render () {
-    const { images, quantityNum } = this.state;
+    const { images, quantityNum, styleQuantOpacity } = this.state;
 
     let onDisplay = null;
     if (images.length === 1) {
@@ -97,6 +119,7 @@ class Stage extends Component {
       <div id="stage">
         <Console 
           quantityNum={quantityNum} 
+          styleQuantOpacity={styleQuantOpacity} 
           handleChange={this.handleChange} 
           handleSubmit={this.handleSubmit} 
         />

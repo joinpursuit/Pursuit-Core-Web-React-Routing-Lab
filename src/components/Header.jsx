@@ -9,7 +9,7 @@ Header Component | Cats and Dogs Fake Server Lab
     import React from 'react';
 
     // local
-    // import './Header.css';
+    import './Header.css';
 
 
 /* COMPONENT */

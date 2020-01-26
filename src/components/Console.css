@@ -15,12 +15,23 @@ form {
   padding: 11px;
 }
 
+.form-quant-line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  transition: opacity 0.3s;
+}
+
 .btn-get {
   position: relative;
   top: 0px;
   left: 0px;
   width: 100px;
   height: 30px;
+  margin-top: 11px;
   border-radius: 15px;
   padding: 1px 7px 2px;
   border-width: 1px;
@@ -37,12 +48,12 @@ form {
 }
 
 label {
-  margin-top: 11px;
+  margin: 2px 11px 0 0;
 }
 
 input[type="number"] {
   width: 40px;
   height: 20px;
-  margin-top: 3px;
+  padding: 2px 6px;
   border-radius: 6px;
 }

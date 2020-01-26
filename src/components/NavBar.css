@@ -5,6 +5,8 @@ NavBar Component Styling | React Cats & Dogs Fake Server Lab
 
 
 nav {
+  grid-row: span 2;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(7, 1fr);

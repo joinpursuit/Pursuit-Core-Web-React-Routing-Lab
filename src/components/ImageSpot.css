@@ -4,7 +4,9 @@ ImageSpot CSS Styling | React Cats & Dogs Fake Server Lab
 */
 
 
-.imagespot {
-  height: 600px;
-  box-shadow: 0px 5px 5px #ccc;
+.imagespot-bg-method {
+  height: inherit;
+  width: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

@@ -33,3 +33,10 @@ html, body, div#root, .App {
   grid-template-columns: 140px 220px auto;
   grid-template-rows: 1fr;
 }
+
+.stage {
+  position: relative;
+  width: auto;
+  height: 100vh;
+  background-color: #444;
+}

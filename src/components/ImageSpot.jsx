@@ -16,9 +16,7 @@ ImageSpot Component | Cats & Dogs Fake Server
 const ImageSpot = (props) => {
 
   return (
-    <>
-      <img src={props.url} alt="random pet" className="imagespot" />
-    </>
+    <div className="imagespot-bg-method" style={{ backgroundImage: `url(${props.url})` }}></div>
   );
 }
 

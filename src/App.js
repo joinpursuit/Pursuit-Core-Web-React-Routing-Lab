@@ -7,13 +7,16 @@ APP MAIN | Cats and Dogs Fake Server Lab
 /* IMPORTS */
     // external
     import React from 'react';
+    import { Switch, Route } from 'react-router-dom';
 
     // local
     import './reset.css';
     import './App.css';
+
     import Header from './components/Header';
     import NavBar from './components/NavBar';
-    import Stage from './components/Stage';
+    import OneRandomDog from './pages/OneRandomDog';
+    import NotFound404 from './pages/NotFound404';
 
 
 /* COMPONENT */
@@ -22,7 +25,27 @@ const App = () => {
     <div className="App">
       <Header />
       <NavBar />
-      <Stage />
+      <div className="stage">
+        <Switch>
+          {/* LANDING */}
+          <Route exact path="/" render={() => {
+                return (
+                  <div> 
+                    Welcome to Joseph's Dogs and Cats Image Finder. Instructions here to come.
+                  </div>
+                );
+          }} />
+
+          {/* THE REST */}
+          {/* <Route path="dogs/random/:num" component={RandomDogs} /> */}
+          <Route path="/dogs/random" component={OneRandomDog} />
+          {/* <Route path="dogs/:breed" component={BreedDogs} /> */}
+          {/* <Route path="cats/random/:num" component={OneRandomCat} /> */}
+          {/* <Route path="cats/random" component={RandomCats} /> */}
+          {/* <Route path="all/random" component={RandomDogsAndCats} /> */}
+          <Route render={NotFound404} />
+        </Switch>
+      </div>
     </div>
   );
 }

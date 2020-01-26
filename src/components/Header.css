@@ -1,0 +1,9 @@
+/*
+Joseph P. Pasaoa
+Header Css | React Cats & Dogs Fake Server Lab
+*/
+
+
+header {
+  grid-row: span 2;
+}

@@ -26,24 +26,26 @@ const Console = (props) => {
 
   return (
     <form onSubmit={props.handleSubmit}>
+      <button type="submit" className="btn-get">Get Animals</button>
       <Switch>
         {/* <Route path="/all/random" component={CatsAndDogs} /> */}
         {/* NUMBER */}
         <Route exact path="/*/random">
-          <label htmlFor="quantityNum">How many {imageLabel} images would you like (1-10)?</label>
-          <input 
-            type="number" 
-            min="1" 
-            max="10" 
-            name="quantityNum" 
-            id="quantityNum" 
-            value={props.quantityNum} 
-            onChange={props.handleChange} 
-          />
+          <div className="form-quant-line" style={{ opacity: props.styleQuantOpacity }}>
+            <label htmlFor="quantityNum">How many {imageLabel} images would you like (1-10)?</label>
+            <input 
+              type="number" 
+              min="1" 
+              max="10" 
+              name="quantityNum" 
+              id="quantityNum" 
+              value={props.quantityNum} 
+              onChange={props.handleChange} 
+            />
+          </div>
         </Route>
         {/* <Route path="/dogs/:breed" component={Dogs} /> */}
       </Switch>
-      <button type="submit" className="btn-get">Get Animals</button>
     </form>
   );
 }

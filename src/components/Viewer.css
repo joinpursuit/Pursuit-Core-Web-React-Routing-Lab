@@ -5,6 +5,8 @@ Viewer Css | React Cats & Dogs Fake Server Lab
 
 
 .viewer {
+  grid-row: span 2;
+
   position: relative;
   display: flex;
   flex-direction: row;
