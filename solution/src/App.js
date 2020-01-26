@@ -6,6 +6,7 @@ import Dog from './Components/Dog';
 import DogBreed from './Components/DogBreed';
 import DogNumber from './Components/DogNumber';
 import Cat from './Components/Cat';
+import CatNumber from './Components/CatNumber'
 
 
 
@@ -22,8 +23,8 @@ const App = () => {
       <Route exact path="/dog/random" component={Dog}/>
         <Route path="/dog/random/:num" component={DogNumber} />
         <Route path="/dog/:breed" component={DogBreed} />
-      <Route  path="/cat/random" component={Cat}/>
-        {/* <Route path="/cat/:num" component={CatNumber} /> */}
+      <Route exact path="/cat/random" component={Cat}/>
+        <Route path="/cat/random/:num" component={CatNumber} />
     </Switch>
   </div>
   )
