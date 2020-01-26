@@ -14,6 +14,7 @@ function App() {
 
         <Route exact path="/dog" component={Dog} />
         <Route exact path="/dog/random" component={Dog} />
+        
         <Route path="/dog/random/:num" component={Dog} />
         <Route path="/dog/:breed/:num" component={Dog} />
         <Route path="/dog/:breed" component={Dog} />
