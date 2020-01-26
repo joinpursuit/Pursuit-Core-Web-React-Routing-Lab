@@ -1,0 +1,10 @@
+/*
+Joseph P. Pasaoa
+ImageSpot CSS Styling | React Cats & Dogs Fake Server Lab
+*/
+
+
+.imagespot {
+  height: 600px;
+  box-shadow: 0px 5px 5px #ccc;
+}
