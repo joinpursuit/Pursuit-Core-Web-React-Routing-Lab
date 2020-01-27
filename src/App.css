@@ -31,7 +31,7 @@ html, body, div#root, .App {
 .App {
   display: grid;
   grid-template-columns: 140px 220px auto;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100%;
 }
 
 .stage {
@@ -40,6 +40,7 @@ html, body, div#root, .App {
   height: auto;
   background-color: #222;
   border-left: solid 4px #ddd;
+  overflow-y: scroll;
 }
 
 /* SAVED FROM PREVIOUS ITERATION - FLEX POSSIBILITY
