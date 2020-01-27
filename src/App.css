@@ -42,6 +42,23 @@ html, body, div#root, .App {
   border-left: solid 4px #ddd;
 }
 
+/* SAVED FROM PREVIOUS ITERATION - FLEX POSSIBILITY
+.viewer {
+  grid-row: span 2;
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 0 1 50%;
+  height: auto;
+
+  padding: 0 11px;
+  margin-top: 11px;
+} */
+
 .stage--grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

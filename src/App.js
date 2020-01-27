@@ -19,6 +19,7 @@ APP MAIN | Cats and Dogs Fake Server Lab
     import OneRandomDog from './pages/OneRandomDog';
     import RandomCats from './pages/RandomCats';
     import OneRandomCat from './pages/OneRandomCat';
+    import RandomDogsAndCats from './pages/RandomDogsAndCats';
     import NotFound404 from './pages/NotFound404';
 
 
@@ -45,7 +46,7 @@ const App = () => {
           {/* <Route path="/dogs/:breed" component={BreedDogs} /> */}
           <Route path="/cats/random/:num" component={RandomCats} />
           <Route path="/cats/random" component={OneRandomCat} />
-          {/* <Route path="/all/random" component={RandomDogsAndCats} /> */}
+          <Route path="/all/random" component={RandomDogsAndCats} />
           <Route render={NotFound404} />
         </Switch>
       </div>
