@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-NavBar Component | Cats and Dogs Fake Server Lab
+NavBar Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 

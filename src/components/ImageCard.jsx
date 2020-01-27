@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-ImageCard Component | Cats & Dogs Fake Server
+ImageCard Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 

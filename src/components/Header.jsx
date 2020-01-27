@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-Header Component | Cats and Dogs Fake Server Lab
+Header Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 

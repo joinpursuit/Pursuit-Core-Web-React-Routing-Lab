@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-APP MAIN | Joseph's Random Cat-Dog Image Fetcher
+APP MAIN Component Page | Joseph's Random Cat-Dog Image Fetcher
 */
 
 

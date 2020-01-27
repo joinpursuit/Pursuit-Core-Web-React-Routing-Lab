@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-ImageSpot Component | Cats & Dogs Fake Server
+ImageSpot Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 
