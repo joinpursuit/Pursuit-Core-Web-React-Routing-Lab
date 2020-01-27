@@ -21,13 +21,13 @@ const NavBar = () => {
 
   return (
     <nav>
-      <NavLink to="/">Home + About</NavLink>
-      <NavLink to="/dogs/random">A Random Dog</NavLink>
-      <NavLink to={() => `/dogs/random/${makeRandomNum()}`}>Multiple Random Dogs</NavLink>
-      <NavLink to="/dogs/default">A Dog by Breed</NavLink>
-      <NavLink to="/cats/random">A Random Cat</NavLink>
-      <NavLink to={() => `/cats/random/${makeRandomNum()}`}>Multiple Random Cats</NavLink>
-      <NavLink to="/all/random">Random Dogs & Cats</NavLink>
+      <NavLink to="/" className="nav--link">Home + About</NavLink>
+      <NavLink to="/dogs/random" className="nav--link">A Random Dog</NavLink>
+      <NavLink to={() => `/dogs/random/${makeRandomNum()}`} className="nav--link">Multiple Random Dogs</NavLink>
+      <NavLink to="/dogs/default" className="nav--link">A Dog by Breed</NavLink>
+      <NavLink to="/cats/random" className="nav--link">A Random Cat</NavLink>
+      <NavLink to={() => `/cats/random/${makeRandomNum()}`} className="nav--link">Multiple Random Cats</NavLink>
+      <NavLink to="/all/random" className="nav--link">Random Dogs & Cats</NavLink>
     </nav>
   );
 }

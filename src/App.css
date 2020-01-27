@@ -38,7 +38,6 @@ APP MAIN Component Page Styling | Joseph's Random Cat-Dog Image Fetcher
   position: relative;
   width: auto;
   height: auto;
-  border-left: solid 4px #ddd;
   overflow-y: scroll;
 
   background-color: #222;

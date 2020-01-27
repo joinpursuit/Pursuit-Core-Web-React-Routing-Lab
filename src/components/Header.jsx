@@ -17,8 +17,8 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Cats & Dogs Fake Server</h1>
       <p>Copyright ©2019 by Joseph P. Pasaoa. All rights reserved.</p>
+      <h1>Random Cat-Dog Image Fetcher</h1>
     </header>
   );
 }
