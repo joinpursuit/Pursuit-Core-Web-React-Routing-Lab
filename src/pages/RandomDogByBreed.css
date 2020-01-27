@@ -1,0 +1,25 @@
+/*
+Joseph P. Pasaoa
+RandomDogByBreed Page Styling | React Cats & Dogs Fake Server Lab
+*/
+
+
+.console {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  background-color: #111;
+}
+
+.console label {
+  margin: 3px 3px 3px 14px;
+  color: #fff;
+}
+
+.console select {
+  margin: 3px;
+}

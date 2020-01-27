@@ -24,7 +24,7 @@ const NavBar = () => {
       <NavLink to="/">Home + About</NavLink>
       <NavLink to="/dogs/random">A Random Dog</NavLink>
       <NavLink to={() => `/dogs/random/${makeRandomNum()}`}>Multiple Random Dogs</NavLink>
-      <NavLink to="/dogs/breed">A Dog by Breed</NavLink>
+      <NavLink to="/dogs/default">A Dog by Breed</NavLink>
       <NavLink to="/cats/random">A Random Cat</NavLink>
       <NavLink to={() => `/cats/random/${makeRandomNum()}`}>Multiple Random Cats</NavLink>
       <NavLink to="/all/random">Random Dogs & Cats</NavLink>

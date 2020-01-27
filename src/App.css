@@ -43,6 +43,17 @@ html, body, div#root, .App {
   overflow-y: scroll;
 }
 
+.stage--addconsole {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 /* SAVED FROM PREVIOUS ITERATION - FLEX POSSIBILITY
 .viewer {
   grid-row: span 2;
