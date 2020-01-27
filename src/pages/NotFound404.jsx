@@ -1,22 +1,29 @@
 /*
 Joseph P. Pasaoa
-NotFound404 Page Component | Cats & Dogs Fake Server
+NotFound404 Page Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 
 /* IMPORTS */
-import React from 'react';
-// import './NotFound404.css';
+    // external
+    import React from 'react';
+
+    // local
+    import './NotFound404.css';
 
 
-/* MAIN */
+/* COMPONENT */
 const NotFound404 = () => {
 
   return (
-    <>
-      <h1>Page Not Found</h1>
-      <p>Oops, looks like you got misdirected. =/</p>
-    </>
+    <div className="notfound">
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>
+        Oops, you're not supposed to be here. 
+        Better try again and pick a route from the left!
+      </p>
+    </div>
   );
 }
 
