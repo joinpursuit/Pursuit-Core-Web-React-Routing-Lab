@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-RandomDogs Component | Cats & Dogs Fake Server
+RandomDogs Page Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 
@@ -8,6 +8,7 @@ RandomDogs Component | Cats & Dogs Fake Server
     // external
     import React, { Component } from 'react';
     import axios from 'axios';
+
     // local
     import ImageCard from '../components/ImageCard';
 

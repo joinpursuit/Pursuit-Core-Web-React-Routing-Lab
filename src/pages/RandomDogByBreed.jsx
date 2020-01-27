@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-RandomDogByBreed Component | Cats & Dogs Fake Server
+RandomDogByBreed Page Component | Joseph's Random Cat-Dog Image Fetcher
 */
 
 
@@ -9,12 +9,13 @@ RandomDogByBreed Component | Cats & Dogs Fake Server
     import React, { Component } from 'react';
     import { withRouter } from 'react-router-dom';
     import axios from 'axios';
+
     // local
     import './RandomDogByBreed.css';
     import ImageSpot from '../components/ImageSpot';
 
 
-/* COMPONENT & EXPORT */
+/* COMPONENT */
 class RandomDogByBreed extends Component {
   state = {
     breeds: [],
@@ -63,7 +64,6 @@ class RandomDogByBreed extends Component {
 
   handleChange = (e) => {
     const selectedBreed = e.target.value;
-    console.log(selectedBreed);
     this.props.history.push({
         pathname: `/dogs/${selectedBreed}`
     });
@@ -101,4 +101,6 @@ class RandomDogByBreed extends Component {
   }
 }
 
+
+/* EXPORT */
 export default withRouter(RandomDogByBreed);
