@@ -1,6 +1,6 @@
 /*
-CSS Reset | Client | SUITAPP Web App
-GROUP 1: Amine Bensalem, Douglas MacKrell, Savita Madray, Joseph P. Pasaoa
+Joseph P. Pasaoa
+CSS Reset | Joseph's Random Cat-Dog Image Fetcher
 */
 
 
@@ -54,7 +54,7 @@ table {
 }
 
 
-html, body, div#root {
+html, body, div#root, .App {
   height: 100%;
   width: 100%;
   margin: 0;

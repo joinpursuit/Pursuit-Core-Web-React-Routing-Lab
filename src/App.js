@@ -1,6 +1,6 @@
 /*
 Joseph P. Pasaoa
-APP MAIN | Cats and Dogs Fake Server Lab
+APP MAIN | Joseph's Random Cat-Dog Image Fetcher
 */
 
 
@@ -32,11 +32,17 @@ const App = () => {
       <NavBar />
       <div className="stage">
         <Switch>
+
           {/* LANDING */}
           <Route exact path="/" render={() => {
                 return (
-                  <div> 
-                    Welcome to Joseph's Dogs and Cats Image Finder. Instructions here to come.
+                  <div className="intro">
+                    <p>
+                      Welcome to my app the Random Cat-Dog Image Fetcher!
+                    </p>
+                    <p>
+                      Pick a section from the left and enjoy the images you'll find!
+                    </p>
                   </div>
                 );
           }} />
@@ -49,6 +55,7 @@ const App = () => {
           <Route path="/cats/random" component={OneRandomCat} />
           <Route path="/all/random" component={RandomDogsAndCats} />
           <Route render={NotFound404} />
+
         </Switch>
       </div>
     </div>
