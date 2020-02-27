@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom'
+
+import './css/app.css'
+
 import MultipleRandomCats from './components/MultipleRandomCats';
 import MultipleRandomDogs from './components/MultipleRandomDogs';
 import RandomDogByBreed from './components/RandomDogByBreed';

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const MultipleRandomDogs = () => {
-    return(
-        <div>This my div</div>
-    )
+class MultipleRandomDogs extends Component {
+    render () {
+        return(
+            <div>This my div</div>
+        )
+    }
 }
 
 export default MultipleRandomDogs;
