@@ -1,6 +1,6 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
 import axios from 'axios'
+import Dog from './Dog'
 
 
 class MultipleDogs extends React.Component{
@@ -8,29 +8,33 @@ class MultipleDogs extends React.Component{
         dogArr: [],
         num: ''
     }
-    GetDog = () =>{
-        const {num} = useParams();
+
+    
+    getMultiDogs = async(num)=>{
         try{
-            let dogAmount = `https://dog.ceo/api/breeds/image/random/{num}`
-            let res = await axios.get(dogAmount)
+            let dogAmount = `https://dog.ceo/api/breeds/image/random/${num}`
+            let res = await axios.get(dogAmount);
             this.setState({
                 dogArr: res.data.message
             })
-
+            
         }catch(error){
             this.setState({
-                dogArr: res.data.message
+                dogArr: []
             })
-
+            
         }
+    }
+    render(){
+        let dogs = this.state.dogArr.map(dog =>{
+            return <Dog key={dog}/>
+        })
         return(
-            let dogs = this.state.dogArr.map(dog =>{
-                return <>
-            })
             <div>
-                {num}
+                {dogs}
             </div>
         )
+
     }
 }
 

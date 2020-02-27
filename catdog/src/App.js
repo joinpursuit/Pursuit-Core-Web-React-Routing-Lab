@@ -1,5 +1,5 @@
 import React from 'react';
-import Dogs from './Component/Dogs'
+import Dogs from './Component/RandomDogs'
 import MultipleDogs from './Component/MultipleRandomDogs'
 import { Route, Switch } from 'react-router-dom'
 
