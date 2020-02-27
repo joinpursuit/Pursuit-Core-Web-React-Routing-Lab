@@ -1,3 +1,10 @@
 import React from 'react';
 
-export default mMltipleRandomDogs
+const MultipleRandomDogs = ()  =>{
+  
+  return(
+    <div>Multiple Random Dogs</div>
+  )
+}
+
+export default MultipleRandomDogs

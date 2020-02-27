@@ -5,7 +5,7 @@ import Cat from './components/Cat';
 import RandomDogByBreed from './components/MultipleRandomDogs';
 import MultipleRandomDogs from './components/MultipleRandomDogs';
 import MultipleRandomCat from './components/MultipleRandomCats';
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 
 import './App.css';
