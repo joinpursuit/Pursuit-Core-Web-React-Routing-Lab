@@ -5,8 +5,11 @@ import '../css/nav.css'
 const NavBar = () => {
     return(
         <nav>
-            <NavLink to={"/dog"}>Dogs</NavLink>
-            <NavLink to={"/cat"}>Cats</NavLink>
+            <NavLink to={"/dog/random"}> Random Dog</NavLink>
+            <NavLink to={"/dog/random/:num"}>Random Dogs</NavLink>
+            <NavLink to={"/dog/:breed"}>Dogs By Breed</NavLink>
+            <NavLink to={"/cat/random"}>Random Cat</NavLink>
+            <NavLink to={"/cat/random/:num"}>Random Cats</NavLink>
         </nav>
     )
 }
