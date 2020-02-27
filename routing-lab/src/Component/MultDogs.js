@@ -6,7 +6,7 @@ import Image from './Image'
 class MultDogs extends React.Component{
     state ={ dogPics: [], numberOfDogs:10 }
     
-  componentDidUpdate(){
+  componentDidMount(){
       const numberOfDogs = this.state.numberOfDogs
       if(numberOfDogs){
           this.getMultPics(numberOfDogs)

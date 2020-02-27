@@ -10,8 +10,11 @@ function App() {
     <div className="App">
       Cat/Dog API
       <NavBar/>
+      <Switch>
+
       <Route path={'/dog'} component = {RandDogImg}/>
       <Route path={'/dog/random/:num'} component = {MultDogs}/>
+      </Switch>
      
 
     </div>
