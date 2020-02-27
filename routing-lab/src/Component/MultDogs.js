@@ -23,8 +23,9 @@ class MultDogs extends React.Component{
         }
     }
     render(){
-        let dogs = this.state.getMultPics.map(dog=>{
-            return <Image img={dog} key={dog}/>        })
+        let dogs = this.state.dogPics.map(dog=>{
+            return <Image img={dog} key={dog}/>      
+          })
         
         return (
             <div>
