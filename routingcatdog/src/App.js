@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route,Switch} from "react-router-dom"
 import DogImageRandom from "./Components/DogImageRandom"
+import DogsRandom from "./Components/DogsRandom"
 
 
 
@@ -8,8 +9,12 @@ function App() {
   return (
     <div className="App">
     <Switch>
-        <Route path={"/dog/random"}>
+        <Route exact path={"/dog/random"}>
           <DogImageRandom/>
+        </Route>
+        <Route path={"/dog/random/:number"}>
+          <DogsRandom/>
+
         </Route>
 
 
