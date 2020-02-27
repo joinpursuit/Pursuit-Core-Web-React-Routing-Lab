@@ -13,9 +13,9 @@ class App extends Component {
       <div className="App">
       <NavBar/>
       <Switch>
-      <Route path={"/dog/random"} component={RandomDog}/>
+      <Route exact path={"/dog/random"} component={RandomDog}/>
       <Route path={"/dog/random/:num"} component={MultipleRandomDogs}/>
-      <Route path={"/cat/random/"} component={RandomCatImage}/>
+      <Route exact path={"/cat/random/"} component={RandomCatImage}/>
       <Route path={"/cat/random/:num"} component={MultipleRandomCats}/>
       <Route path={"/dog/:breed"} component={RandomDogByBreed}/>
       </Switch>
