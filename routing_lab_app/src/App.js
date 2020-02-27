@@ -1,12 +1,8 @@
 import React from "react";
 import "./App.css";
-import "./components/NavBar";
-import "./components/RandomDog";
-import "./components/MultipleRandomDogs";
-import "./components/RandomDogByBreed";
-import "./components/RandomCat";
-import "./components/MultipleRandomCats";
 import { Route, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import RandomDog from "./components/RandomDog";
 import MultipleRandomDogs from "./components/MultipleRandomDogs";
 import RandomDogByBreed from "./components/RandomDogByBreed";
 import RandomCat from "./components/RandomCat";
