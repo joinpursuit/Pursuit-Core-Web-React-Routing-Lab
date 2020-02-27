@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MultipleRandomCats = () => {
+const RandomDog = () => {
     return(
         <div>This my div</div>
     )
 }
 
-export default MultipleRandomCats;
+export default RandomDog;
