@@ -3,8 +3,7 @@ import "./App.css";
 import { Route} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import RandomDog from "./components/RandomDog";
-
-// import MultipleRandomDogs from "./components/MultipleRandomDogs";
+ import MultipleRandomDogs from "./components/MultipleRandomDogs";
 // import RandomDogByBreed from "./components/RandomDogByBreed";
 // import RandomCat from "./components/RandomCat";
 // import MultipleRandomCats from "./components/MultipleRandomCats";
@@ -13,15 +12,15 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Route path={"/dog/random"}>
+      <Route exact path={"/dog/random"}>
         <RandomDog />
       </Route>
 
-      {/* <Route path={"/dog/random/:num"}>
+      <Route path={"/dog/random/:num"}>
         <MultipleRandomDogs />
       </Route>
 
-      <Route path={"/dog/:breed"}>
+      {/* <Route path={"/dog/:breed"}>
         <RandomDogByBreed />
       </Route>
 
