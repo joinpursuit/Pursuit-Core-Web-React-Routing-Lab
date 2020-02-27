@@ -7,6 +7,7 @@ class Dogs extends React.Component{
     }
 
     fetchDogPhoto = async() =>{
+        debugger
         try{
             let res = await axios.get("https://dog.ceo/api/breeds/image/random");
             this.setState({
