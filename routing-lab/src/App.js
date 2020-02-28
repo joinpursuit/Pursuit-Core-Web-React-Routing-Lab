@@ -4,17 +4,17 @@ import {Route} from 'react-router-dom'
 import NavBar from './NavBar';
 import RandDogImg from './Component/RandDogImg'
 import MultDogs from './Component/MultDogs';
-
+import RandCat from './Component/RandCat'
 function App() {
   return (
     <div className="App">
       Cat/Dog API
       <NavBar/>
-      <Switch>
+     
 
       <Route path={'/dog'} component = {RandDogImg}/>
       <Route path={'/dog/random/:num'} component = {MultDogs}/>
-      </Switch>
+      <Route path={'/cat'} component = {RandCat}/>
      
 
     </div>
