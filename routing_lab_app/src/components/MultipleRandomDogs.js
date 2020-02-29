@@ -8,11 +8,19 @@ class MultipleRandomDogs extends Component{
         manyDogs: [],
         numberOfDogs: 5
     }
+
+
+
+    componentDidMount(){
+        const numberOfDogs = this.state.numberOfDogs
+         if(numberOfDogs){
+             this.getManyRandomDogs(numberOfDogs)
+         }
+    }
     
-    getManyRandomDogs = async({numberOfDogs})=>{
-        const dogURL = `https://dog.ceo/api/breeds/image/random/${numberOfDogs}`
-    
+    getManyRandomDogs = async(numberOfDogs)=>{   
         try{
+            const dogURL = `https://dog.ceo/api/breeds/image/random/${numberOfDogs}`
             let res = await axios.get(dogURL)
             debugger
             this.setState = ({manyDogs:(res.data.message)})
@@ -21,15 +29,14 @@ class MultipleRandomDogs extends Component{
         }
     }
     render(){
-        let manyDogs = this.state.manyDogs.map(dog=>{
+        let manyDogPics = this.state.manyDogs.map(dog=>{
             return <Dog img={dog} key={dog}/>
 
         })
 
         return(
             <div>
-                <button onClick={this.getManyRandomDogs}>Click To Get Multiple Random Dogs</button>
-                {manyDogs}
+                {manyDogPics}
             </div>
         )
     }
