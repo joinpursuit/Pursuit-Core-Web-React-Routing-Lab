@@ -1,54 +1,36 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import GetDog from './GetDog'
+import { useParams } from 'react-router-dom';
 
-class RandomDogByBreed extends Component {
-  state = {
-    breed: "",
-    breeds: []
-  }
+const GetDog = () => {
+  const [url, setUrl] = useState("");
+  const { breed } = useParams();
 
-  componentDidMount(){
-    this.fetchBreeds()
-  }
-
-  async fetchBreeds(){
-    try{
-      let res = await axios.get(`https://dog.ceo/api/breeds/list/all`)
-      this.setState({breeds: Object.keys(res.data.message)})
-    }catch (error){
-      this.setState({breeds: []})
-      console.log(error)
+  useEffect(() => {
+    const fetchDog = async () => {
+      let breedURL = `https://dog.ceo/api/breed/${breed}/images/random/1`;
+      try {
+        let res = await axios.get(breedURL);
+        setUrl(res.data.message[0])
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
+    fetchDog();
+  }, [breed]);
+  return <img src={url} alt={""}/>
+}
+// const GetDog = async () => {
+//   const { breed } = useParams();
+//   let breedURL = await `https://dog.ceo/api/breed/${breed}/images/random/1`;
+//   try {
+//     let res = axios.get(breedURL);
+//     debugger
+//     url = res.data.message[0];
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   return(<img src={url} alt={""}></img>)
+// }
 
-  // componentWillUpdate(){
-
-  // }
-
-  handleBreedSelect = e =>{
-    e.preventDefault();
-    this.setState({breed: e.target.value})
-    // this.props.history.push(`dog/${this.state.breed}`)
-  }
-  
-  render(){
-    const {breeds, breed} = this.state
-    const options = breeds.map(breed=>{
-      return <option value={breed} key={breed}>{breed}</option>
-    })
-    console.log(breed)
-    return (
-      <>
-      {/* <select value={breed} onChange={this.handleBreedSelect}> */}
-        {/* <option value="" disabled>Pick a Breed</option> */}
-        {/* {options} */}
-      {/* </select> */}
-      <GetDog/>
-      </>
-      )
-    }
-  }
-  
-  export default RandomDogByBreed
-  {/* <img src={getRandomBreed()} alt={""}></img> */}
+export default GetDog

@@ -5,11 +5,10 @@ import './css/app.css'
 
 import MultipleRandomCats from './components/MultipleRandomCats';
 import MultipleRandomDogs from './components/MultipleRandomDogs';
-// import RandomDogByBreed from './components/RandomDogByBreed';
 import RandomCatImage from './components/RandomCatImage';
 import RandomDog from './components/RandomDog';
 import NavBar from './components/NavBar';
-import GetDog from './components/GetDog';
+import GetDog from './components/RandomDogByBreed';
 
 class App extends Component {
   render(){
