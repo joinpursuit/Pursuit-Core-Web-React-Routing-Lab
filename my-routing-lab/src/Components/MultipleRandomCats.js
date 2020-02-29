@@ -1,10 +1,13 @@
 import React from 'react';
+import axios from 'axios';
+import Image from './Image'
 
 
 class MultipleRandomCats extends React.Component {
     constructor (props){
         super (props)
         this.state = {
+            apiKey: "bb783245-0e2d-4ed6-939a-af6d4a491ed0",
             images: [],
             imageNum: this.props.match.params.num
         }
@@ -12,10 +15,11 @@ class MultipleRandomCats extends React.Component {
     componentDidMount () {
         this.getCatImages(this.state.imageNum)
     }
-    getDogImages = async (num) => {
+    getCatImages = async (num) => {
         try {
-            let res = await axios.get(`https://dog.ceo/api/breeds/image/random/${num}`)
-            this.setState({images: res.data.message})
+            let res = await axios.get(`https://api.thecatapi.com/v1/images/search?api_key=${this.state.apiKey}&limit=${this.state.imageNum}`)
+            debugger
+            this.setState({images: res.data})
         } catch (error) {
                 this.setState({images: []})
                 console.log(`Recognize the error of your ways: ${error}`)
@@ -24,7 +28,7 @@ class MultipleRandomCats extends React.Component {
     render () {
         const {images} = this.state
         let catImages = images.map(src => {
-            return <Image image={src}/>
+            return <Image image={src.url} key={src}/>
         })
         return (
             <>
