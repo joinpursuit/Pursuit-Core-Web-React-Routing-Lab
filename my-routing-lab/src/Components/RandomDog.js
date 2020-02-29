@@ -12,6 +12,11 @@ class RandomDog extends React.Component {
         let res = await axios.get("")
     }
 
+    render () {
+        return (
+            "dog"
+        )
+    }
 
 
 
