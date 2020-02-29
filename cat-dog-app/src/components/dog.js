@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class Dog extends Component {
   state = { 
-    img: "" 
+    dogImg: "" 
   }
   componentDidMount () {
     this.getDog();
@@ -12,8 +12,9 @@ class Dog extends Component {
 
   getDog = async () => {
     try{
+      
       let res = await axios.get(`https://dog.ceo/api/breeds/image/random`)
-       this.setState( {img : res.data.message} )
+       this.setState( {dogImg : res.data.message} )
     }catch(err) {
           console.log(err)
     }
@@ -23,7 +24,7 @@ class Dog extends Component {
 return(
   <div>
     <h2>Random Dog</h2>
-    <img src={this.state.img} alt={""}></img>
+    <img src={this.state.dogImg} alt={""}></img>
     <button onClick={this.getDog}> Get a random dog</button>
   </div>
 )}

@@ -2,7 +2,9 @@ import React from 'react';
 
 const MultipleRandomCats = ()  =>{
   return(
-    <div>Multiple Random Cats</div>
+    <div>
+      Multiple Random Cats
+      </div>
   )
 }
 
