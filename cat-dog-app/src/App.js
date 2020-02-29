@@ -5,6 +5,7 @@ import Cat from './components/Cat';
 import RandomDogByBreed from './components/MultipleRandomDogs';
 import MultipleRandomDogs from './components/MultipleRandomDogs';
 import MultipleRandomCat from './components/MultipleRandomCats';
+
 import { Route } from 'react-router-dom'
 
 
@@ -17,8 +18,8 @@ function App() {
       <Route path={'/dog/random'} component={Dog}/>
       <Route path={'/cat/random'} component={Cat}/>
       <Route path={'/dog/random/:num'} component={MultipleRandomDogs}/>
-      <Route path={'/dog/:breed'} component={RandomDogByBreed}/>
       <Route path={'/cat/random/:num'} component={MultipleRandomCat}/>
+      <Route path={'/dog/:breed'} component={RandomDogByBreed}/>
 
       
     </div>

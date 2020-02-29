@@ -1,11 +1,32 @@
-import React from 'react';
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
-const Dog = ()  =>{
 
-  return(
-    <div>Dog</div>
-  )
+class Dog extends Component {
+  state = { 
+    img: "" 
+  }
+  componentDidMount () {
+    this.getDog();
+  }
+
+  getDog = async () => {
+    try{
+      let res = await axios.get(`https://dog.ceo/api/breeds/image/random`)
+       this.setState( {img : res.data.message} )
+    }catch(err) {
+          console.log(err)
+    }
+  }
+
+  render(){
+return(
+  <div>
+    <h2>Random Dog</h2>
+    <img src={this.state.img} alt={""}></img>
+    <button onClick={this.getDog}> Get a random dog</button>
+  </div>
+)}
 }
 
 export default Dog
