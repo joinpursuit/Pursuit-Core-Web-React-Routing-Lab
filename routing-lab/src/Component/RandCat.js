@@ -11,7 +11,6 @@ componentDidMount(){
 fetchCatImage = async ()=>{
     try{
         let response = await axios.get("https://api.thecatapi.com/v1/images/search")
-        debugger
         this.setState({img: response.data[0].url})
 
     }catch(error){

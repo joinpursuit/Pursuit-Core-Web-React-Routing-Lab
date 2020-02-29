@@ -16,7 +16,6 @@ class MultDogs extends React.Component{
         try{
             const picsURL = `https://dog.ceo/api/breeds/image/random/${numberOfDogs}`
             let response = await axios.get(picsURL)
-           
             this.setState({dogPics:response.data.message})
         }catch(error){
             this.setState({dogPics: []})

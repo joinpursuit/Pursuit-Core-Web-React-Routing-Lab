@@ -16,7 +16,7 @@ function App() {
       <Route path={'/dog'} component = {RandDogImg}/>
       <Route path={'/dog/random/:num'} component = {MultDogs}/>
       <Route path={'/cat'} component = {RandCat}/>
-      <Route path={'/dog/random/:num'} component ={MultCats}/>
+      <Route path={'/cat/random/:num'} component ={MultCats}/>
 
     </div>
   );
