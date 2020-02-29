@@ -13,6 +13,7 @@ return (
         <br></br>
         <NavLink to ={'/cat/random/:num'}>Multiple Cat Images</NavLink>
         <br></br>
+        <NavLink to ={'/dog/:breed'}>Random Dog by Breed</NavLink>
 
     </nav>
 )
