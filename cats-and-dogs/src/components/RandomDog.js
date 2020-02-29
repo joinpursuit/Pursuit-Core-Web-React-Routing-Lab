@@ -25,7 +25,7 @@ class RandomDog extends Component {
         <h3>Random Dog API</h3>
         <button onClick={this.fetchDog}>Get Dog</button>
         <br />
-        <img src={this.state.dogImg}></img>
+        <img src={this.state.dogImg} alt={""}></img>
       </div>
     )
   }

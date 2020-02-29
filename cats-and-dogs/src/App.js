@@ -20,7 +20,7 @@ class App extends Component {
       <Route path={"/dog/random/:num"} component={MultipleRandomDogs}/>
       <Route exact path={"/cat/random/"} component={RandomCatImage}/>
       <Route path={"/cat/random/:num"} component={MultipleRandomCats}/>
-      {/* <Route path={"/dog/:breed"}><RandomDogByBreed/></Route> */}
+      <Route path={"/dog/:breed"}><RandomDogByBreed/></Route>
       </Switch>
       </div>
     );

@@ -1,42 +1,40 @@
-import React, { useEffect } from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+// import getRandomBreed from './RanDogBreedFunc'
 
-let url = ""
-
-// const getDogPics = async () => {
-// debugger
-//   let  {breed} = useParams();
-//   const breedURL = `https://dog.ceo/api/breed/${breed}/images/random/1`;
-//   try {
-//     let res = await axios.get(breedURL);
-//     url = res.data.message;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-debugger
-
-const RandomDogByBreed =  () => {
-let  {breed} = useParams();
-    
-  const breedURL = `https://dog.ceo/api/breed/${breed}/images/random/1`;
-  try {
-    let res =  axios.get(breedURL);
-    url = res.data.message;
-  } catch (error) {
-    console.log(error);
+class RandomDogByBreed extends Component {
+  state = {
+    breedURL: "",
+    breeds: []
   }
-//   componentDidMount() {
-//     this.getDogPics(this.state.numberOfDogs)
-//   }
 
-//   render() {
-    // let dogs = this.state.dogPics.map(dog => {
-    //   return <DogDisplay src={dog} key={dog} />;
-    // });
-    
-    return <img src= {url} alt={""}></img>;
-//   }
-}
-export default RandomDogByBreed;
+  componentDidMount(){
+    this.fetchBreeds()
+  }
+
+  async fetchBreeds(){
+    try{
+      let res = await axios.get(`https://dog.ceo/api/breeds/list/all`)
+      this.setState({breeds: Object.keys(res.data.message)})
+    }catch (error){
+      this.setState({breeds: []})
+      console.log(error)
+    }
+  }
+
+  render(){
+    const {breeds, breedURL} = this.state
+    const options = breeds.map(breed=>{
+      return <option value={breed} key={breed}>{breed}</option>
+    })
+    return (
+      <select>
+        <option selected disabled>Pick a Breed</option>
+        {options}
+      </select>
+      )
+    }
+  }
+  
+  export default RandomDogByBreed
+  {/* <img src={getRandomBreed()} alt={""}></img> */}
