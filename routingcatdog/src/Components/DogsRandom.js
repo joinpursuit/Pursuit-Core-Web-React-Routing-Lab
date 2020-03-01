@@ -19,8 +19,8 @@ const DogsRandom =()=> {
          }
     }
 
-    let showDog = dogImgs.map((img)=>{
-        return <Dog key={img} imglink={img}/> 
+    let showDog = dogImgs.map((img,i)=>{
+        return <Dog key={i} imglink={img}/> 
     })
 
     useEffect(()=>{

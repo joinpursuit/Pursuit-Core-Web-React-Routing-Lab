@@ -1,8 +1,9 @@
 import React from 'react';
 import {Route,Switch} from "react-router-dom"
+import NavBar from './Components/NavBar';
 import DogImageRandom from "./Components/DogImageRandom"
 import DogsRandom from "./Components/DogsRandom"
-import NavBar from './Components/NavBar';
+import DogByBreed from "./Components/DogByBreed"
 
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
         
         <Route path={"/dog/random/:number"}>
           <DogsRandom/>
+        </Route>
+        <Route path={"/dog/:breed"}>
+          <DogByBreed/>
         </Route>
 
 

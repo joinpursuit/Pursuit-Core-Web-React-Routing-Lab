@@ -7,7 +7,7 @@ const NavBar = () => {
             <NavLink exact to={"/"}>HOME</NavLink>
             <NavLink to={"/dog/random"}>Random Dog</NavLink>
             <NavLink to={"/dog/random/6"}>Random Dog by Number</NavLink>
-            <NavLink to={"/dog/breed"}>Dog by Breed</NavLink>
+            <NavLink to={"/dog/mix"}>Dog by Breed</NavLink>
             <NavLink to={"/cat/random"}>Random Cat</NavLink>
             <NavLink to={"/cat/random/10"}>Random Cats by Number</NavLink>
 
