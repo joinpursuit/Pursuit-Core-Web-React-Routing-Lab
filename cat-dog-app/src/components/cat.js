@@ -11,7 +11,7 @@ class Cat extends Component {
   getCat = async () => {
     try{
       let res = await axios.get(`https://api.thecatapi.com/v1/images/search`)
-      debugger
+      // debugger
       this.setState( {catImg: res.data[0].url})
     }catch(err) {
       console.log(err)
