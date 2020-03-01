@@ -18,7 +18,6 @@ class MultipleRandomCats extends React.Component {
     getCatImages = async (num) => {
         try {
             let res = await axios.get(`https://api.thecatapi.com/v1/images/search?api_key=${this.state.apiKey}&limit=${this.state.imageNum}`)
-            debugger
             this.setState({images: res.data})
         } catch (error) {
                 this.setState({images: []})
