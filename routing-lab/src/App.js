@@ -14,9 +14,9 @@ function App() {
       <NavBar/>
      
 
-      <Route path={'/dog'} component = {RandDogImg}/>
+      <Route exact path={'/dog'} component = {RandDogImg}/>
       <Route path={'/dog/random/:num'} component = {MultDogs}/>
-      <Route path={'/cat'} component = {RandCat}/>
+      <Route exact path={'/cat'} component = {RandCat}/>
       <Route path={'/cat/random/:num'} component ={MultCats}/>
       <Route path ={'/dog/:breed'} component={RandDogBreed}/>
 

@@ -4,37 +4,32 @@ import Image from './Image'
 
 class RandDogBreed extends React.Component{
     state={
-img:""
+        img:""
     }
-    componentDidUpdate(prevProps) {
-        const oldBreed = prevProps.breed; 
-        const newBreed = this.props.breed; 
-        if(oldBreed !== newBreed) {
-            this.getBreedPics(newBreed);
-        }
-    }
+   componentDidMount(){
+       this.getBreedPics(this.props.match.params.breed)
+   }
     getBreedPics =async(breed)=>{
-        const breedPic =`https://dog.ceo/api/breed/${breed}/images/random`
+        const breedPic =`https://dog.ceo/api/breed/${breed}/images/random/`
         debugger
         try {
             let res = await axios.get(breedPic);
-            this.setState({dogPics: res.data.message})
+            this.setState({img: res.data.message})
         } catch (error) {
-            this.setState({dogPics: []});
+            this.setState({img: ''});
         }
     }
     render(){
-        let breeds = this.state.dogPics.map(dog => {
-            return <Image img={dog} key={dog}/>
-        })
+     
         return(
             <div>
-                {breeds}
+
+                {this.state.img}
             </div>
         )
     }
 
 }
-
+//this.props.match.params.breed
 
 export default RandDogBreed

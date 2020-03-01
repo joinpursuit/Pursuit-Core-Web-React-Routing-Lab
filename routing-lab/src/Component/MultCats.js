@@ -4,23 +4,24 @@ import Image from './Image'
 
 
 class MultCats extends React.Component{
-    state ={ catPics: [], numberOfCats:1}
+    constructor(props){
+        super(props)
+        state ={ apiKey:"1e37d765-8afa-40d5-b975-78fdd644a659", catPics: [], numberOfCats:1}
+    }
 handleNumberChange(event){
         this.setState({numberOfCats:event.target.value})
          }
   componentDidMount(){
-      const numberOfCats = this.state.numberOfCats
-      if(numberOfCats){
-          this.getMultPics(numberOfCats)
-      }
+        this.getMultPics(numberOfCats)
+      
   }
 
-    getMultPics = async (numberOfCats)=>{
+    getMultPics = async (number)=>{
         try{
-            const picsURL = `https://api.thecatapi.com/v1/images/search?limit=${numberOfCats}`
+            const picsURL = `https://api.thecatapi.com/v1/images/search?api_key=${this.state.apiKey}&limit=${this.state.numberOfCats}`
             let response = await axios.get(picsURL)
            
-            this.setState({catPics:response.data.message})
+            this.setState({catPics:response.data})
             console.log(response)
         }catch(error){
             this.setState({catPics: []})
@@ -28,7 +29,7 @@ handleNumberChange(event){
     }
     render(){
         let cats = this.state.catPics.map(cat=>{
-            return <Image img={cat} key={cat}/>      
+            return <Image img={cat.url} key={cat}/>      
           })
         
         return (
