@@ -1,41 +1,36 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Dog from './Dog'
+import Image from './Image'
 
 class RandomDogByBreed extends Component {
-    state = {
-        dogPics: [],
-        numberOfDogs: 0
-    }
-
-    componentDidUpdate(prevProps) { //prevProps is a given object by previous state
-        const oldBreed = prevProps.breed
-        const newBreed = this.props.breed
-        const numberOfDogs = this.state.numberOfDogs
-        if(oldBreed !== newBreed) {
-            this.getDogPics(newBreed, numberOfDogs) //fires when breed prop is changedc
+    constructor (props){
+        super (props)
+        this.state = {
+            image: "",
+            breed: this.props.match.params.breed
         }
     }
-    //if props or state is changed - use compDidUp (here breed is being changed to change pics), componentDidMount only happens once.
 
-    getDogPics = async (breed, numberOfDogs) => {
+    componentDidMount () {
+        this.getBreedImage(this.state.breed)
+    }
+
+    getBreedImage = async (breed) => {
         try {
-            const breedURL = (`https://dog.ceo/api/breed/${breed}/images/random/${numberOfDogs}`)
+            const breedURL = (`https://dog.ceo/api/breed/${breed}/images/random`)
             let res = await axios.get(breedURL)
-            this.setState({dogPics: res.data.message})
+            debugger
+            this.setState({image: res.data.message})
         } catch (error) {
-            this.setState({dogPics: []})
+            this.setState({image: ""})
             }
     }
     render() {
-
-        let dogs = this.state.dogPics.map(dog => {
-            return <Dog image={dog} />
-        })
+        const {image} = this.state
 
         return (
             <div>
-                {dogs}
+                <Image image={image} />
             </div>
         )
     }

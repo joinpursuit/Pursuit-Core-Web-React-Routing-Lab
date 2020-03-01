@@ -14,6 +14,7 @@ class MultipleRandomDogs extends React.Component {
     componentDidMount () {
         this.getDogImages(this.state.imageNum)
     }
+    
     getDogImages = async (num) => {
         try {
             let res = await axios.get(`https://dog.ceo/api/breeds/image/random/${num}`)
