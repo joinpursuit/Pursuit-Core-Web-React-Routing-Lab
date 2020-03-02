@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Dog from "./Dogs";
 import DogSelector from "./DogSelector";
 
 const RandomDogByBreed = () => {
-  const [dogPics, setDogPics] = useState([]);
+  const [dogImgs, setDogImgs] = useState([]);
   const [breed, setBreed] = useState("");
-  const [numberOfDogs] = useState(3);
-  const [didMount, setDidMount] = useState(false);
+  const [numberOfDogs] = useState(1);
+  const didMount = useRef(false);
 
   const handleBreed = breed => {
     setBreed(breed);
@@ -17,9 +17,9 @@ const RandomDogByBreed = () => {
     const breedURL = `https://dog.ceo/api/breed/${breed}/images/random/${numberOfDogs}`;
     try {
       let res = await axios.get(breedURL);
-      setDogPics(res.data.message);
+      setDogImgs(res.data.message);
     } catch (error) {
-      setDogPics([]);
+      setDogImgs([]);
     }
   };
 
@@ -27,11 +27,11 @@ const RandomDogByBreed = () => {
     if (didMount.current) {
       getDogPics(breed, numberOfDogs);
     } else {
-      setDidMount(true);
+      didMount.current = true;
     }
   }, [breed]);
 
-  let dogs = dogPics.map(dog => {
+  let dogs = dogImgs.map(dog => {
     return <Dog img={dog} key={dog} />;
   });
 

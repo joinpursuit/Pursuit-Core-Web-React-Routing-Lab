@@ -13,7 +13,7 @@ const MultipleRandomDogs = () => {
         const dogURL = `https://dog.ceo/api/breeds/image/random/${num}`;
         let res = await axios.get(dogURL);
         const dogs = res.data.message.map(dog => {
-          return <Dog img={dog} />;
+          return <Dog img={dog} key={dog} />;
         });
         setDogs(dogs);
       } catch (err) {
