@@ -4,6 +4,8 @@ import NavBar from './Components/NavBar';
 import DogImageRandom from "./Components/DogImageRandom"
 import DogsRandom from "./Components/DogsRandom"
 import DogByBreed from "./Components/DogByBreed"
+import CatRandom from "./Components/CatRandom"
+import CatsRandom from "./Components/CatsImageRandom"
 
 
 function App() {
@@ -20,6 +22,12 @@ function App() {
         </Route>
         <Route path={"/dog/:breed"}>
           <DogByBreed/>
+        </Route>
+        <Route exact path={"/cat/random"}>
+          <CatRandom/>
+        </Route>
+        <Route exact path={"/cat/random/:number"}>
+          <CatsRandom />
         </Route>
 
 

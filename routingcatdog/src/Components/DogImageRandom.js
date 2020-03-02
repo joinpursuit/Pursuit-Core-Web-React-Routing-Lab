@@ -9,6 +9,7 @@ const DogImageRandom =()=> {
     const handleRandomDogBtn =async()=>{
         try {
             let res = await axios.get("https://dog.ceo/api/breeds/image/random")
+            //https://api.thecatapi.com/v1/images/search?limit=2&page=10&order=Desc
             setImgLink(res.data.message)
             console.log(imgLink)
             // debugger
