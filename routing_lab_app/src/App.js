@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import RandomDog from "./components/RandomDog";
 import MultipleRandomDogs from "./components/MultipleRandomDogs";
 import RandomDogByBreed from "./components/RandomDogByBreed";
-// import RandomCat from "./components/RandomCat";
+import RandomCat from "./components/RandomCat";
 // import MultipleRandomCats from "./components/MultipleRandomCats";
 
 function App() {
@@ -21,14 +21,14 @@ function App() {
           <MultipleRandomDogs />
         </Route>
 
-        <Route exact path={"/dog/:breed"}>
+        <Route path={"/dog/:breed"}>
           <RandomDogByBreed />
         </Route>
-        {/* 
-      <Route path={"/cat/random"}>
-        <RandomCat />
-      </Route>
 
+        <Route exact path={"/cat/random"}>
+          <RandomCat />
+        </Route>
+        {/*
       <Route path={"/cat/random/:num"}>
         <MultipleRandomCats />
       </Route> */}
