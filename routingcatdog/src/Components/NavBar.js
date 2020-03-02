@@ -10,6 +10,7 @@ const NavBar = () => {
             <NavLink to={"/dog/mix"}>Dog by Breed</NavLink>
             <NavLink to={"/cat/random"}>Random Cat</NavLink>
             <NavLink to={"/cat/random/5"}>Random Cats by Number</NavLink>
+            <NavLink to={"/all/random"}>Bonus Cats vs Dogs</NavLink>
 
         </nav>
     )
