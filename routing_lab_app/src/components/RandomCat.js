@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Dog from "./Dogs";
+import Dog from "./Picture";
 
 const RandomCat = () => {
   const [catPic, setCatPic] = useState(null);
@@ -10,6 +10,7 @@ const RandomCat = () => {
       let res = await axios.get("https://api.thecatapi.com/v1/images/search");
       setCatPic(res.data[0].url);
     } catch (error) {
+      setCatPic(null);
       console.log(error);
     }
   };

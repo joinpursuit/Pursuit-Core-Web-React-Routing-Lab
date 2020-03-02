@@ -6,7 +6,7 @@ import RandomDog from "./components/RandomDog";
 import MultipleRandomDogs from "./components/MultipleRandomDogs";
 import RandomDogByBreed from "./components/RandomDogByBreed";
 import RandomCat from "./components/RandomCat";
-// import MultipleRandomCats from "./components/MultipleRandomCats";
+import MultipleRandomCats from "./components/MultipleRandomCats";
 
 function App() {
   return (
@@ -28,10 +28,10 @@ function App() {
         <Route exact path={"/cat/random"}>
           <RandomCat />
         </Route>
-        {/*
-      <Route path={"/cat/random/:num"}>
-        <MultipleRandomCats />
-      </Route> */}
+
+        <Route path={"/cat/random/:num"}>
+          <MultipleRandomCats />
+        </Route>
       </Switch>
     </div>
   );

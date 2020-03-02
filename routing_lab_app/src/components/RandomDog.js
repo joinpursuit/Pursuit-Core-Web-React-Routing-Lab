@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Dog from "./Dogs";
+import Picture from "./Picture";
 import axios from "axios";
 
 const RandomDog = () => {
@@ -10,6 +10,7 @@ const RandomDog = () => {
       let res = await axios.get("https://dog.ceo/api/breeds/image/random");
       setDogPic(res.data.message);
     } catch (err) {
+      setDogPic(null);
       console.log(err);
     }
   };
@@ -21,7 +22,7 @@ const RandomDog = () => {
   return (
     <div>
       <button onClick={getRandomDog}>Get Random Dog</button>
-      <Dog img={dogPic} />
+      <Picture img={dogPic} />
     </div>
   );
 };

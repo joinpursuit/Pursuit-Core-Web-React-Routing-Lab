@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Dog from "./Dogs";
+import Picture from "./Picture";
 import { useParams } from "react-router-dom";
 
 const MultipleRandomDogs = () => {
@@ -13,10 +13,11 @@ const MultipleRandomDogs = () => {
         const dogURL = `https://dog.ceo/api/breeds/image/random/${num}`;
         let res = await axios.get(dogURL);
         const dogs = res.data.message.map(dog => {
-          return <Dog img={dog} key={dog} />;
+          return <Picture img={dog} key={dog} />;
         });
         setDogs(dogs);
       } catch (err) {
+        setDogs("");
         console.log(err);
       }
     };

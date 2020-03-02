@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import Dog from "./Dogs";
+import Picture from "./Picture";
 import DogSelector from "./DogSelector";
 
 const RandomDogByBreed = () => {
@@ -32,7 +32,7 @@ const RandomDogByBreed = () => {
   }, [breed]);
 
   let dogs = dogImgs.map(dog => {
-    return <Dog img={dog} key={dog} />;
+    return <Picture img={dog} key={dog} />;
   });
 
   return (
