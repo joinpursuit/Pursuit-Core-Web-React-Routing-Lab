@@ -31,7 +31,7 @@ class Cat extends Component {
         const { url } = this.state
         return (
             <div>
-                <h1> Gatos </h1>
+                <h1 className='text-muted'> Gatos </h1>
                 <div className="images">
                     <img src={url} alt={url}/>
                 </div>
