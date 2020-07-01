@@ -8,7 +8,9 @@ const Home = () => {
             <br/>
             Click on a link in the navbar to see some random images. 
             <br/>
-            Choose how many you'd like to see with the number dropdown, or just search a breed.</p>
+            Choose how many you'd like to see or select a breed from the dropdown.</p>
+            <br/>
+            Thanks for stopping by. Contact Giselle Sanchez for any inquires on this page.
         </div>
     )
 };

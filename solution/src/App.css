@@ -36,16 +36,8 @@
     transform: rotate(360deg);
   }
 }
-/* .images {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
-  align-content: center;
-  justify-self: center;
-  flex-wrap: wrap;
-  margin: auto
+.scrollable-menu {
+  height: auto;
+  max-height: 200px; 
+  overflow-x: hidden;
 }
-img {
-  height: 300px;
-  width: 400px;
-} */

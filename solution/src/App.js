@@ -13,7 +13,7 @@ import CatNumber from './Components/CatNumber'
 const App = () => {
   return (
     <div className="App">
-      <nav className='navbar navbar-expand-lg navbar-light' style={{ backgroundColor: '#e3f2fd' }}>
+      <nav className='navbar navbar-expand-sm navbar-light' style={{ backgroundColor: '#e3f2fd' }}>
         <Link to="/" className='nav-item nav-link'>Home</Link> {" "}
         <Link to="/dog/random" className='nav-item nav-link'>Dog</Link>{" "}
         <Link to="/cat/random" className='nav-item nav-link'>Cat</Link> {" "}
@@ -21,10 +21,10 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/dog/random" component={Dog} />
-        <Route path="/dog/random/:num" component={DogNumber} />
-        <Route path="/dog/:breed" component={DogBreed} />
+        <Route path="/dog/random/:num" component={Dog} />
+        {/* <Route path="/dog/:breed" component={DogBreed} />  */}
         <Route exact path="/cat/random" component={Cat} />
-        <Route path="/cat/random/:num" component={CatNumber} />
+        <Route path="/cat/random/:num" component={Cat} />
       </Switch>
     </div>
   )
