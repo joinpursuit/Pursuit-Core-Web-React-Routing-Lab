@@ -25,7 +25,7 @@ const Dog = () => {
             let errorMessage = `Uh-oh! Something went wrong, try again later!`;
             console.log(errorMessage)
         }
-    }
+    };
     const generateDogCards = () => {
         return dogArray.map((dog) => {
             return (
@@ -56,9 +56,13 @@ const Dog = () => {
             )
         })
     };
+    const changeNumberOfDogs = (e) => {
+        e.preventDefault();
+        setNumberOfDogs(e.target.value)
+    }
     const getBreed = async (e) => {
         e.preventDefault();
-        console.log(e.target.value)
+        console.log('list item value', e.target.value)
         let newDogReq = ``;
         e.target.value === 'random' ? newDogReq = `https://dog.ceo/api/breeds/image/random` : newDogReq = `https://dog.ceo/api/breed/${e.target.value}/images`;
         try {
@@ -76,6 +80,7 @@ const Dog = () => {
                 <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Select Breed
                 </button>
+                <input type='number' value={numberOfDogs} onChange={changeNumberOfDogs} min='1' max='10'/>
                 <ul className="dropdown-menu scrollable-menu" role='menu' onChange={getBreed}>
                     {breedList()}
                     <div className="dropdown-divider"></div>
